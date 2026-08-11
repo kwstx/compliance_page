@@ -1,0 +1,282 @@
+:root {
+    --bg-color: #ffffff;
+    --text-main: #111111;
+    --text-muted: #666666;
+    --nav-bg: #111111;
+    --nav-text: #cccccc;
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Newsreader', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Subtle background gradient at the bottom */
+.background-glow {
+    position: fixed;
+    bottom: -20vh;
+    left: -10vw;
+    width: 120vw;
+    height: 40vh;
+    background: radial-gradient(ellipse at bottom, rgba(255, 230, 200, 0.4) 0%, rgba(255, 200, 255, 0.3) 40%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(30px);
+}
+
+.page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--nav-bg);
+    border-radius: 100px;
+    margin: 24px auto;
+    padding: 4px 4px 4px 18px;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+}
+
+.logo-text {
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0 12px;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.caret {
+    margin-top: 1px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 11px;
+    font-weight: 500;
+    margin-right: 12px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn-primary {
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 100px;
+    padding: 8px 15px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.1s;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Hero Section */
+.hero-section {
+    margin-bottom: 36px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center 40%;
+    display: block;
+    border-radius: 2px;
+}
+
+/* Content Section */
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 75px;
+    gap: 30px;
+}
+
+.content-left {
+    flex: 1;
+    max-width: 450px;
+}
+
+.headline {
+    font-size: 42px;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+    margin-bottom: 48px;
+}
+
+.highlight {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.05em;
+    letter-spacing: -0.02em;
+}
+
+/* Logos */
+.logo-cloud-title {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    color: black;
+    letter-spacing: -0.02em;
+}
+
+.brand-logo.monzo {
+    font-size: 15px;
+}
+
+.brand-logo.guild {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 16.5px;
+}
+
+.brand-logo.cleo {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0;
+}
+
+.cleo-box {
+    border: 2px solid black;
+    padding: 1px 5px;
+    border-radius: 3px;
+}
+
+.brand-logo.trademe {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.brand-logo.paradigm {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Content Right */
+.content-right {
+    flex: 0 0 285px;
+    padding-top: 60px;
+}
+
+.description {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--text-main);
+    margin-bottom: 18px;
+    max-width: 255px;
+}
+
+.email-form {
+    display: flex;
+    background-color: #f0f0f0;
+    border-radius: 100px;
+    padding: 4px;
+    align-items: center;
+}
+
+.email-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px 12px;
+    font-size: 11px;
+    outline: none;
+    font-family: inherit;
+    color: var(--text-main);
+}
+
+.email-input::placeholder {
+    color: #888;
+}
+
+.form-btn {
+    background-color: black;
+    color: white;
+    padding: 9px 18px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .content-section {
+        flex-direction: column;
+    }
+    .content-right {
+        padding-top: 0;
+    }
+}
