@@ -370,9 +370,9 @@ body {
 }
 
 .use-cases-left h2 {
-    font-family: 'Switzer', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 3.5rem;
-    font-weight: 500;
+    font-weight: 400;
     color: #26273b;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
@@ -402,9 +402,9 @@ body {
 }
 
 .use-case-card h3 {
-    font-family: 'Switzer', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
     color: #26273b;
     margin-bottom: 48px;
 }
