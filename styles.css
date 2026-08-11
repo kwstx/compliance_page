@@ -97,7 +97,8 @@ body {
 .main-content {
     padding: 0 24px 32px 24px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-card {
@@ -143,6 +144,7 @@ body {
 }
 
 .hero-content p {
+    font-family: 'Switzer', sans-serif;
     font-size: 1.15rem;
     color: var(--text-muted);
     line-height: 1.6;
@@ -182,3 +184,160 @@ body {
     }
 }
 
+/* About Section */
+.about-section {
+    max-width: 1400px;
+    width: 100%;
+    margin: 80px auto 40px;
+    padding: 0;
+}
+
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 60px;
+    padding: 0;
+}
+
+.about-title-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+}
+
+.about-title-col h2 {
+    font-family: 'Switzer', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #26273b;
+    letter-spacing: -0.02em;
+}
+
+.about-desc-col {
+    margin-top: 10px;
+}
+
+.about-desc-col p {
+    font-family: 'Switzer', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 80px;
+}
+
+.feature-card {
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.feature-card-large {
+    background: #f1f4fd url('assets/flower.jpg') no-repeat right bottom;
+    background-size: cover; /* Fallback to cover if it includes the whole card */
+    justify-content: space-between;
+}
+
+.feature-title-light {
+    color: #2e305e;
+    font-family: 'Switzer', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    max-width: 60%;
+}
+
+.feature-text-light {
+    color: #555c8c;
+    font-family: 'Switzer', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 50%;
+}
+
+.feature-card-dark {
+    background-color: #322f4b;
+    color: #ffffff;
+}
+
+.feature-card-dark h3 {
+    font-family: 'Switzer', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #ffffff;
+}
+
+.feature-card-dark p {
+    font-family: 'Switzer', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #a1a3bb;
+    margin-top: auto;
+}
+
+.partners-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.partners-title {
+    font-family: 'Switzer', sans-serif;
+    font-size: 0.95rem;
+    color: #8c8f9f;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.partners-logos {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.logo-placeholder {
+    color: #aeb1cc;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.1;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .about-header {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card-large {
+        background-position: center;
+    }
+    
+    .partners-section {
+        flex-direction: column;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    
+    .partners-logos {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
