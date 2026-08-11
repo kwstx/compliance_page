@@ -208,7 +208,7 @@ body {
 }
 
 .about-title-col h2 {
-    font-family: 'Switzer', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 3.5rem;
     font-weight: 400;
     color: #26273b;
@@ -252,9 +252,9 @@ body {
 
 .feature-title-light {
     color: #2e305e;
-    font-family: 'Switzer', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
     max-width: 60%;
 }
 
@@ -272,9 +272,9 @@ body {
 }
 
 .feature-card-dark h3 {
-    font-family: 'Switzer', sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 1.75rem;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 24px;
     color: #ffffff;
 }
