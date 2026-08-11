@@ -484,8 +484,8 @@ body {
     background-color: transparent;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -495,8 +495,8 @@ body {
 }
 
 .carousel-btn svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
 }
 
 .carousel-btn:hover {
