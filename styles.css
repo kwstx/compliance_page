@@ -134,8 +134,9 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 500;
+    font-family: 'Instrument Serif', serif;
+    font-size: 4.5rem;
+    font-weight: 400;
     margin-bottom: 20px;
     color: #2b2c45;
     letter-spacing: -0.02em;
