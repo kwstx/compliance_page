@@ -245,8 +245,7 @@ body {
 }
 
 .feature-card-large {
-    background: #f1f4fd url('assets/flower.jpg') no-repeat right bottom;
-    background-size: cover; /* Fallback to cover if it includes the whole card */
+    background-color: #f1f4fd;
     justify-content: space-between;
 }
 
