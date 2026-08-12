@@ -153,90 +153,104 @@
             </div>
         </section>
 
-        <section class="use-cases-section">
-            <div class="use-cases-left">
-                <span class="section-subtitle">USD bloom in Action</span>
-                <h2>Use cases</h2>
-                <p>USD bloom offers a variety of use cases for developers, businesses and treasuries seeking secure and profitable stablecoin integrations</p>
+        <section class="places-we-love-section">
+            <div class="places-header">
+                <div class="places-header-left">
+                    <h2>Places we love</h2>
+                    <p>Ask Odessia to suggest destinations based on the vibe you're looking for.</p>
+                </div>
+                <div class="places-controls">
+                    <button class="places-btn" aria-label="Previous">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="places-btn" aria-label="Next">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
             </div>
             
-            <div class="use-cases-right">
-                <div class="use-case-card">
-                    <h3 id="card-title">Business</h3>
-                    <p id="card-desc">Boost user engagement by offering USD bloom, a secure fiat-backed stablecoin with high yields, allowing your customers to earn effortlessly on your platform.</p>
-                    <a href="#" class="learn-more-link">
-                        <span class="arrow-icon">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </span>
-                        Learn more
-                    </a>
+            <div class="places-grid">
+                <!-- Card 1 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="assets/santa_fe.jpg" alt="Santa Fe">
+                        <div class="pagination-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <h3>Santa Fe</h3>
+                    <p>High desert air, adobe walls, and sharp green chile.</p>
                 </div>
-                
-                <div class="carousel-controls">
-                    <button id="prev-card" class="carousel-btn" aria-label="Previous">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                    </button>
-                    <button id="next-card" class="carousel-btn" aria-label="Next">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </button>
+                <!-- Card 2 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="assets/oaxaca.jpg" alt="Oaxaca">
+                    </div>
+                    <h3>Oaxaca</h3>
+                    <p>The soul of Mexico, from mezcal-soaked valleys to the Pacific surf.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="assets/new_orleans.jpg" alt="New Orleans">
+                    </div>
+                    <h3>New Orleans</h3>
+                    <p>Brass bands, hot beignets, and century-old live oaks.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="assets/tofino.jpg" alt="Tofino">
+                    </div>
+                    <h3>Tofino</h3>
+                    <p>Wild surf, ancient forests, and rugged Pacific edge beauty.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="place-card">
+                    <div class="place-image">
+                        <img src="assets/charleston.jpg" alt="Charleston">
+                    </div>
+                    <h3>Charleston</h3>
+                    <p>Cobblestone streets, Lowcountry flavors, and complex American history.</p>
                 </div>
             </div>
+
+            <a href="#" class="ask-odessia-link">
+                Ask Odessia where to go 
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
         </section>
     </main>
 
     <script>
-        const cards = [
-            {
-                title: "Business",
-                desc: "Boost user engagement by offering USD bloom, a secure fiat-backed stablecoin with high yields, allowing your customers to earn effortlessly on your platform."
-            },
-            {
-                title: "Developers",
-                desc: "Integrate USD bloom into your applications with ease. Our comprehensive API and documentation get you up and running in minutes, not days."
-            },
-            {
-                title: "Treasury",
-                desc: "Diversify your corporate treasury with a stable, yield-bearing asset. Maximize capital efficiency while maintaining deep liquidity."
-            }
-        ];
-
-        let currentCardIndex = 0;
-        const titleEl = document.getElementById('card-title');
-        const descEl = document.getElementById('card-desc');
-        const prevBtn = document.getElementById('prev-card');
-        const nextBtn = document.getElementById('next-card');
-
-        function updateCard() {
-            // Simple fade effect
-            titleEl.style.opacity = '0';
-            descEl.style.opacity = '0';
+        // Carousel scrolling logic
+        const carousel = document.querySelector('.places-grid');
+        const prevBtn = document.querySelector('.places-btn[aria-label="Previous"]');
+        const nextBtn = document.querySelector('.places-btn[aria-label="Next"]');
+        
+        if (carousel && prevBtn && nextBtn) {
+            const scrollAmount = 300; // Adjust scroll distance per click
             
-            setTimeout(() => {
-                titleEl.innerHTML = cards[currentCardIndex].title;
-                descEl.innerHTML = cards[currentCardIndex].desc;
-                titleEl.style.opacity = '1';
-                descEl.style.opacity = '1';
-            }, 200);
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            });
         }
-
-        prevBtn.addEventListener('click', () => {
-            currentCardIndex = (currentCardIndex === 0) ? cards.length - 1 : currentCardIndex - 1;
-            updateCard();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentCardIndex = (currentCardIndex === cards.length - 1) ? 0 : currentCardIndex + 1;
-            updateCard();
-        });
     </script>
 </body>
 </html>

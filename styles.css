@@ -386,187 +386,182 @@ body {
     }
 }
 
-/* Use Cases Section */
-.use-cases-section {
-    max-width: 1400px;
-    width: 100%;
-    margin: 40px auto 80px;
-    padding: 60px;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    background-color: #fafbfc;
-    border-radius: 40px;
-}
-
-.use-cases-left {
-    flex: 1;
-    max-width: 500px;
-    padding-top: 20px;
-}
-
-.use-cases-left .section-subtitle {
-    font-family: 'Switzer', sans-serif;
-    font-size: 0.95rem;
-    color: #8c8f9f;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 16px;
-}
-
-.use-cases-left h2 {
-    font-family: 'Instrument Serif', serif;
-    font-size: 3.5rem;
-    font-weight: 400;
-    color: #26273b;
-    margin-bottom: 24px;
-    letter-spacing: -0.02em;
-}
-
-.use-cases-left p {
-    font-family: 'Switzer', sans-serif;
-    font-size: 1.15rem;
-    color: #5e617d;
-    line-height: 1.6;
-}
-
-.use-cases-right {
-    flex: 1;
-}
-
-.use-case-card {
-    background-color: #ffffff;
-    border-radius: 24px;
-    padding: 40px 40px 0 40px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+/* Places We Love Section */
+.places-we-love-section {
+    align-self: stretch;
+    margin-left: -24px;
+    margin-right: -24px;
+    padding: 60px 48px;
+    background-color: #f2eee3;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
 }
 
-.use-case-card h3 {
+.places-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.places-header-left h2 {
     font-family: 'Instrument Serif', serif;
-    font-size: 2rem;
+    font-size: 2.8rem;
     font-weight: 400;
-    color: #26273b;
-    margin-bottom: 48px;
+    color: #1a323d; /* Dark teal */
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
 }
 
-.use-case-card p {
-    font-family: 'Switzer', sans-serif;
+.places-header-left p {
+    font-family: 'Inter', sans-serif;
     font-size: 1.05rem;
-    color: #5e617d;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    color: #7b7b7b;
 }
 
-.learn-more-link {
+.places-controls {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.places-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: #26273b;
-    text-decoration: none;
-    margin-bottom: 40px;
+    justify-content: center;
     transition: opacity 0.2s;
 }
 
-.learn-more-link:hover {
+.places-btn:hover {
     opacity: 0.7;
 }
 
-.learn-more-link .arrow-icon {
+.places-grid {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    background-color: #f1f4fd;
-    border-radius: 50%;
-    color: #26273b;
-}
-
-.card-image-container {
-    margin-top: auto;
+    gap: 16px;
+    margin-bottom: 40px;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
 }
 
-.card-image-container img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px 12px 0 0;
+.places-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.place-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(25% - 12px);
+    min-width: 260px;
+}
+
+.place-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.place-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-/* Carousel Controls */
-.carousel-controls {
+.pagination-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 12px;
-    position: relative;
-    z-index: 10;
-    
+    gap: 6px;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dot.active {
     background-color: #ffffff;
-    border: 1px solid #e1e3ed;
-    border-radius: 40px;
-    padding: 4px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-    width: fit-content;
+    width: 6px;
+    height: 6px;
+}
+
+.place-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 6px;
+}
+
+.place-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #767676;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.ask-odessia-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1a323d;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: opacity 0.2s;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
-    gap: 4px;
+    width: 100%;
 }
 
-.carousel-btn {
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: #26273b;
-    transition: all 0.2s ease;
+.ask-odessia-link:hover {
+    opacity: 0.7;
 }
 
-.carousel-btn svg {
-    width: 16px;
-    height: 16px;
-}
-
-.carousel-btn:hover {
-    background-color: #f1f4fd;
-    border-color: #f1f4fd;
-    transform: translateY(-2px);
-}
-
-.carousel-btn:active {
-    transform: translateY(0);
-}
-
-/* Card Content Transitions */
-#card-title, #card-desc {
-    transition: opacity 0.2s ease;
-}
-
-@media (max-width: 992px) {
-    .use-cases-section {
-        flex-direction: column;
-        padding: 40px 24px;
-        border-radius: 24px;
+@media (max-width: 1200px) {
+    .place-card {
+        flex: 0 0 calc(33.333% - 11px);
     }
-    
-    .use-cases-left h2 {
-        font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .place-card {
+        flex: 0 0 calc(50% - 8px);
+    }
+    .places-we-love-section {
+        padding: 40px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .place-card {
+        flex: 0 0 100%;
     }
 }
