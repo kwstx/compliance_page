@@ -280,10 +280,10 @@ body {
 }
 
 .explore-section h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #000000;
+    font-family: 'Instrument Serif', serif;
+    font-size: 4.5rem;
+    font-weight: 400;
+    color: #2b2c45;
     margin-bottom: 32px;
     letter-spacing: -0.02em;
 }
@@ -322,11 +322,12 @@ body {
 }
 
 .explore-content h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #000000;
+    font-family: 'Instrument Serif', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #2b2c45;
     margin-bottom: 8px;
+    letter-spacing: -0.02em;
 }
 
 .explore-content p {
