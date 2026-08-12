@@ -509,9 +509,9 @@ body {
 }
 
 .place-card h3 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-family: 'Instrument Serif', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
     color: #222222;
     margin-bottom: 6px;
 }
