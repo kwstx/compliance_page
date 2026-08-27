@@ -1,0 +1,2098 @@
+﻿commit b85a79d8b934b334ebf7710acbfe01f6a38d154b
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Thu Aug 13 13:26:12 2026 +0300
+
+    fixing page background
+
+diff --git a/styles.css b/styles.css
+index fe24868..665cc3f 100644
+--- a/styles.css
++++ b/styles.css
+@@ -392,7 +392,7 @@ body {
+     margin-left: -24px;
+     margin-right: -24px;
+     padding: 60px 48px;
+-    background-color: #f2eee3;
++    background-color: #ffffff;
+     display: flex;
+     flex-direction: column;
+ }
+
+commit fc26e43c13f6403270112382a3e3550ecb9680c6
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Thu Aug 13 13:22:56 2026 +0300
+
+    adding new image
+
+diff --git a/styles.css b/styles.css
+index ed22c4d..fe24868 100644
+--- a/styles.css
++++ b/styles.css
+@@ -111,7 +111,7 @@ body {
+     overflow: hidden;
+     /* Seamless blend from white top to image bottom */
+     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 65%), url('assets/21.jpg') center bottom;
+-    background-size: cover;
++    background-size: 100% auto;
+     background-repeat: no-repeat;
+     display: flex;
+     flex-direction: column;
+
+commit 86f1b5a52f963d2be608fd169fc9ef4749cfb00c
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 20:02:12 2026 +0300
+
+    new typography
+
+diff --git a/styles.css b/styles.css
+index 4e69598..ed22c4d 100644
+--- a/styles.css
++++ b/styles.css
+@@ -528,7 +528,7 @@ body {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+-    font-family: 'Inter', sans-serif;
++    font-family: 'Switzer', sans-serif;
+     font-weight: 600;
+     font-size: 0.95rem;
+     color: #1a323d;
+
+commit 9627af5e48adf2b9fa58b3a870025c8fada949e8
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 19:57:38 2026 +0300
+
+    new typography
+
+diff --git a/styles.css b/styles.css
+index ba6a2dc..4e69598 100644
+--- a/styles.css
++++ b/styles.css
+@@ -509,9 +509,9 @@ body {
+ }
+ 
+ .place-card h3 {
+-    font-family: 'Inter', sans-serif;
+-    font-size: 1.1rem;
+-    font-weight: 700;
++    font-family: 'Instrument Serif', serif;
++    font-size: 1.5rem;
++    font-weight: 400;
+     color: #222222;
+     margin-bottom: 6px;
+ }
+
+commit f2b688526d7810676a65e181a29d5f72e3e9f268
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 19:53:09 2026 +0300
+
+    new page
+
+diff --git a/styles.css b/styles.css
+index 9e2a399..ba6a2dc 100644
+--- a/styles.css
++++ b/styles.css
+@@ -386,187 +386,182 @@ body {
+     }
+ }
+ 
+-/* Use Cases Section */
+-.use-cases-section {
+-    max-width: 1400px;
+-    width: 100%;
+-    margin: 40px auto 80px;
+-    padding: 60px;
++/* Places We Love Section */
++.places-we-love-section {
++    align-self: stretch;
++    margin-left: -24px;
++    margin-right: -24px;
++    padding: 60px 48px;
++    background-color: #f2eee3;
+     display: flex;
+-    justify-content: space-between;
+-    gap: 40px;
+-    background-color: #fafbfc;
+-    border-radius: 40px;
+-}
+-
+-.use-cases-left {
+-    flex: 1;
+-    max-width: 500px;
+-    padding-top: 20px;
++    flex-direction: column;
+ }
+ 
+-.use-cases-left .section-subtitle {
+-    font-family: 'Switzer', sans-serif;
+-    font-size: 0.95rem;
+-    color: #8c8f9f;
+-    font-weight: 600;
+-    display: block;
+-    margin-bottom: 16px;
++.places-header {
++    display: flex;
++    justify-content: space-between;
++    align-items: flex-end;
++    margin-bottom: 32px;
++    max-width: 1400px;
++    margin-left: auto;
++    margin-right: auto;
++    width: 100%;
+ }
+ 
+-.use-cases-left h2 {
++.places-header-left h2 {
+     font-family: 'Instrument Serif', serif;
+-    font-size: 3.5rem;
++    font-size: 2.8rem;
+     font-weight: 400;
+-    color: #26273b;
+-    margin-bottom: 24px;
+-    letter-spacing: -0.02em;
+-}
+-
+-.use-cases-left p {
+-    font-family: 'Switzer', sans-serif;
+-    font-size: 1.15rem;
+-    color: #5e617d;
+-    line-height: 1.6;
++    color: #1a323d; /* Dark teal */
++    margin-bottom: 8px;
++    letter-spacing: -0.01em;
+ }
+ 
+-.use-cases-right {
+-    flex: 1;
++.places-header-left p {
++    font-family: 'Inter', sans-serif;
++    font-size: 1.05rem;
++    color: #7b7b7b;
+ }
+ 
+-.use-case-card {
+-    background-color: #ffffff;
+-    border-radius: 24px;
+-    padding: 40px 40px 0 40px;
+-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
++.places-controls {
+     display: flex;
+-    flex-direction: column;
+-    height: 100%;
+-    position: relative;
+-    overflow: hidden;
++    gap: 16px;
++    margin-bottom: 8px;
+ }
+ 
+-.use-case-card h3 {
+-    font-family: 'Instrument Serif', serif;
+-    font-size: 2rem;
+-    font-weight: 400;
+-    color: #26273b;
+-    margin-bottom: 48px;
++.places-btn {
++    background: transparent;
++    border: none;
++    cursor: pointer;
++    color: #000;
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    transition: opacity 0.2s;
+ }
+ 
+-.use-case-card p {
+-    font-family: 'Switzer', sans-serif;
+-    font-size: 1.05rem;
+-    color: #5e617d;
+-    line-height: 1.6;
+-    margin-bottom: 30px;
++.places-btn:hover {
++    opacity: 0.7;
+ }
+ 
+-.learn-more-link {
++.places-grid {
+     display: flex;
+-    align-items: center;
+-    gap: 12px;
+-    font-family: 'Inter', sans-serif;
+-    font-weight: 500;
+-    font-size: 0.95rem;
+-    color: #26273b;
+-    text-decoration: none;
++    gap: 16px;
+     margin-bottom: 40px;
+-    transition: opacity 0.2s;
++    width: 100%;
++    max-width: 1400px;
++    margin-left: auto;
++    margin-right: auto;
++    overflow-x: auto;
++    scrollbar-width: none;
++    padding-bottom: 8px;
++    scroll-behavior: smooth;
+ }
+ 
+-.learn-more-link:hover {
+-    opacity: 0.7;
++.places-grid::-webkit-scrollbar {
++    display: none;
+ }
+ 
+-.learn-more-link .arrow-icon {
++.place-card {
+     display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    width: 24px;
+-    height: 24px;
+-    background-color: #f1f4fd;
+-    border-radius: 50%;
+-    color: #26273b;
++    flex-direction: column;
++    flex: 0 0 calc(25% - 12px);
++    min-width: 260px;
+ }
+ 
+-.card-image-container {
+-    margin-top: auto;
++.place-image {
++    position: relative;
+     width: 100%;
+-    display: flex;
+-    justify-content: center;
++    aspect-ratio: 1 / 1;
++    border-radius: 16px;
++    overflow: hidden;
++    margin-bottom: 16px;
+ }
+ 
+-.card-image-container img {
+-    max-width: 100%;
+-    height: auto;
+-    object-fit: contain;
+-    border-radius: 12px 12px 0 0;
++.place-image img {
++    width: 100%;
++    height: 100%;
++    object-fit: cover;
+     display: block;
+ }
+ 
+-/* Carousel Controls */
+-.carousel-controls {
++.pagination-dots {
++    position: absolute;
++    bottom: 12px;
++    left: 0;
++    width: 100%;
+     display: flex;
+     justify-content: center;
+-    align-items: center;
+-    margin-top: 12px;
+-    position: relative;
+-    z-index: 10;
+-    
+-    background-color: #ffffff;
+-    border: 1px solid #e1e3ed;
+-    border-radius: 40px;
+-    padding: 4px;
+-    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+-    width: fit-content;
+-    margin-left: auto;
+-    margin-right: auto;
+-    gap: 4px;
++    gap: 6px;
+ }
+ 
+-.carousel-btn {
+-    background-color: transparent;
+-    border: none;
++.dot {
++    width: 4px;
++    height: 4px;
+     border-radius: 50%;
+-    width: 32px;
+-    height: 32px;
+-    display: flex;
+-    align-items: center;
+-    justify-content: center;
+-    cursor: pointer;
+-    color: #26273b;
+-    transition: all 0.2s ease;
++    background-color: rgba(255, 255, 255, 0.5);
+ }
+ 
+-.carousel-btn svg {
+-    width: 16px;
+-    height: 16px;
++.dot.active {
++    background-color: #ffffff;
++    width: 6px;
++    height: 6px;
+ }
+ 
+-.carousel-btn:hover {
+-    background-color: #f1f4fd;
+-    border-color: #f1f4fd;
+-    transform: translateY(-2px);
++.place-card h3 {
++    font-family: 'Inter', sans-serif;
++    font-size: 1.1rem;
++    font-weight: 700;
++    color: #222222;
++    margin-bottom: 6px;
+ }
+ 
+-.carousel-btn:active {
+-    transform: translateY(0);
++.place-card p {
++    font-family: 'Inter', sans-serif;
++    font-size: 0.95rem;
++    color: #767676;
++    line-height: 1.4;
++    font-weight: 400;
++}
++
++.ask-odessia-link {
++    display: flex;
++    align-items: center;
++    gap: 8px;
++    font-family: 'Inter', sans-serif;
++    font-weight: 600;
++    font-size: 0.95rem;
++    color: #1a323d;
++    text-decoration: none;
++    align-self: flex-start;
++    transition: opacity 0.2s;
++    max-width: 1400px;
++    margin-left: auto;
++    margin-right: auto;
++    width: 100%;
+ }
+ 
+-/* Card Content Transitions */
+-#card-title, #card-desc {
+-    transition: opacity 0.2s ease;
++.ask-odessia-link:hover {
++    opacity: 0.7;
+ }
+ 
+-@media (max-width: 992px) {
+-    .use-cases-section {
+-        flex-direction: column;
++@media (max-width: 1200px) {
++    .place-card {
++        flex: 0 0 calc(33.333% - 11px);
++    }
++}
++
++@media (max-width: 768px) {
++    .place-card {
++        flex: 0 0 calc(50% - 8px);
++    }
++    .places-we-love-section {
+         padding: 40px 24px;
+-        border-radius: 24px;
+     }
+-    
+-    .use-cases-left h2 {
+-        font-size: 2.5rem;
++}
++
++@media (max-width: 480px) {
++    .place-card {
++        flex: 0 0 100%;
+     }
+ }
+
+commit 239f7f25b7b3ce9c5297312e74975d5ea9b254a7
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 19:30:39 2026 +0300
+
+    fixing typography
+
+diff --git a/styles.css b/styles.css
+index f784cad..9e2a399 100644
+--- a/styles.css
++++ b/styles.css
+@@ -280,10 +280,10 @@ body {
+ }
+ 
+ .explore-section h2 {
+-    font-family: 'Inter', sans-serif;
+-    font-size: 2.25rem;
+-    font-weight: 700;
+-    color: #000000;
++    font-family: 'Instrument Serif', serif;
++    font-size: 4.5rem;
++    font-weight: 400;
++    color: #2b2c45;
+     margin-bottom: 32px;
+     letter-spacing: -0.02em;
+ }
+@@ -322,11 +322,12 @@ body {
+ }
+ 
+ .explore-content h3 {
+-    font-family: 'Inter', sans-serif;
+-    font-size: 1.1rem;
+-    font-weight: 600;
+-    color: #000000;
++    font-family: 'Instrument Serif', serif;
++    font-size: 2rem;
++    font-weight: 400;
++    color: #2b2c45;
+     margin-bottom: 8px;
++    letter-spacing: -0.02em;
+ }
+ 
+ .explore-content p {
+
+commit 3e6a5f86c03dbadfdb73abba70c3be0240afb4b2
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 19:18:01 2026 +0300
+
+    adding new page
+
+diff --git a/styles.css b/styles.css
+index 7315294..f784cad 100644
+--- a/styles.css
++++ b/styles.css
+@@ -271,161 +271,118 @@ body {
+     }
+ }
+ 
+-/* About Section */
+-.about-section {
+-    max-width: 1400px;
++/* Explore Section */
++.explore-section {
++    max-width: 1200px;
+     width: 100%;
+-    margin: 80px auto 40px;
+-    padding: 0;
+-}
+-
+-.about-header {
+-    display: flex;
+-    justify-content: space-between;
+-    align-items: flex-start;
+-    margin-bottom: 60px;
+-    padding: 0;
++    margin: 80px auto;
++    padding: 0 24px;
+ }
+ 
+-.about-title-col {
+-    display: flex;
+-    flex-direction: column;
+-    align-items: flex-start;
+-    gap: 32px;
+-}
+-
+-.about-title-col h2 {
+-    font-family: 'Instrument Serif', serif;
+-    font-size: 3.5rem;
+-    font-weight: 400;
+-    color: #26273b;
++.explore-section h2 {
++    font-family: 'Inter', sans-serif;
++    font-size: 2.25rem;
++    font-weight: 700;
++    color: #000000;
++    margin-bottom: 32px;
+     letter-spacing: -0.02em;
+ }
+ 
+-.about-desc-col {
+-    margin-top: 10px;
+-}
+-
+-.about-desc-col p {
+-    font-family: 'Switzer', sans-serif;
+-    font-size: 1.5rem;
+-    color: var(--text-muted);
+-    line-height: 1.4;
+-    font-weight: 400;
+-}
+-
+-.features-grid {
++.explore-grid {
+     display: grid;
+-    grid-template-columns: 2fr 1fr 1fr;
+-    gap: 24px;
+-    margin-bottom: 80px;
++    grid-template-columns: repeat(3, 1fr);
++    gap: 16px;
+ }
+ 
+-.feature-card {
+-    border-radius: 24px;
+-    padding: 40px;
++.explore-card {
++    background-color: #f3f3f3;
++    border-radius: 12px;
++    padding: 20px;
+     display: flex;
+     flex-direction: column;
++    justify-content: space-between;
++    min-height: 200px;
+     position: relative;
+     overflow: hidden;
+-    min-height: 420px;
++    cursor: pointer;
++    transition: background-color 0.2s;
+ }
+ 
+-.feature-card-large {
+-    background-color: #f1f4fd;
+-    justify-content: space-between;
++.explore-card:hover {
++    background-color: #e2e2e2;
+ }
+ 
+-.feature-title-light {
+-    color: #2e305e;
+-    font-family: 'Instrument Serif', serif;
+-    font-size: 2rem;
+-    font-weight: 400;
+-    max-width: 60%;
++.explore-content {
++    display: flex;
++    flex-direction: column;
++    align-items: flex-start;
++    position: relative;
++    z-index: 2;
++    height: 100%;
+ }
+ 
+-.feature-text-light {
+-    color: #555c8c;
+-    font-family: 'Switzer', sans-serif;
++.explore-content h3 {
++    font-family: 'Inter', sans-serif;
+     font-size: 1.1rem;
+-    line-height: 1.5;
+-    max-width: 100%;
+-}
+-
+-.feature-card-dark {
+-    background-color: #322f4b;
+-    color: #ffffff;
++    font-weight: 600;
++    color: #000000;
++    margin-bottom: 8px;
+ }
+ 
+-.feature-card-dark h3 {
+-    font-family: 'Instrument Serif', serif;
+-    font-size: 1.75rem;
+-    font-weight: 400;
+-    margin-bottom: 24px;
+-    color: #ffffff;
++.explore-content p {
++    font-family: 'Inter', sans-serif;
++    font-size: 0.85rem;
++    color: #000000;
++    line-height: 1.4;
++    max-width: 65%;
++    margin-bottom: auto;
+ }
+ 
+-.feature-card-dark p {
+-    font-family: 'Switzer', sans-serif;
+-    font-size: 1.05rem;
+-    line-height: 1.5;
+-    color: #a1a3bb;
+-    margin-top: auto;
++.btn-details {
++    background-color: #ffffff;
++    color: #000000;
++    border: none;
++    border-radius: 20px;
++    padding: 8px 16px;
++    font-family: 'Inter', sans-serif;
++    font-size: 0.85rem;
++    font-weight: 600;
++    cursor: pointer;
++    margin-top: 20px;
+ }
+ 
+-.partners-section {
+-    display: flex;
+-    justify-content: space-between;
+-    align-items: center;
+-    padding: 20px 0;
++.btn-details:hover {
++    background-color: #f0f0f0;
+ }
+ 
+-.partners-title {
+-    font-family: 'Switzer', sans-serif;
+-    font-size: 0.95rem;
+-    color: #8c8f9f;
+-    line-height: 1.5;
+-    font-weight: 500;
+-}
+-
+-.partners-logos {
++.explore-image {
++    position: absolute;
++    right: 16px;
++    bottom: 16px;
++    width: 90px;
++    height: 90px;
++    z-index: 1;
+     display: flex;
+-    gap: 40px;
+     align-items: center;
++    justify-content: center;
+ }
+ 
+-.logo-placeholder {
+-    color: #aeb1cc;
+-    font-size: 1.1rem;
+-    font-family: 'Inter', sans-serif;
+-    line-height: 1.1;
+-    text-align: center;
++.explore-image img {
++    max-width: 100%;
++    max-height: 100%;
++    object-fit: contain;
+ }
+ 
+ @media (max-width: 992px) {
+-    .about-header {
+-        flex-direction: column;
+-        gap: 40px;
++    .explore-grid {
++        grid-template-columns: repeat(2, 1fr);
+     }
+-    
+-    .features-grid {
++}
++
++@media (max-width: 576px) {
++    .explore-grid {
+         grid-template-columns: 1fr;
+     }
+-    
+-    .feature-card-large {
+-        background-position: center;
+-    }
+-    
+-    .partners-section {
+-        flex-direction: column;
+-        gap: 30px;
+-        align-items: flex-start;
+-    }
+-    
+-    .partners-logos {
+-        flex-wrap: wrap;
+-        gap: 20px;
+-    }
+ }
+ 
+ /* Use Cases Section */
+
+commit aa83601db76ae999d33992fe099211e7d0754838
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 18:30:55 2026 +0300
+
+    ading shadow
+
+diff --git a/styles.css b/styles.css
+index 955dae6..7315294 100644
+--- a/styles.css
++++ b/styles.css
+@@ -161,7 +161,7 @@ body {
+     padding: 8px 16px 12px 16px;
+     display: flex;
+     flex-direction: column;
+-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), inset 0 2px 4px rgba(255, 255, 255, 0.7);
++    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06), inset 0 2px 4px rgba(255, 255, 255, 0.7);
+     border: 1px solid #ececec;
+     margin-top: 24px;
+ }
+
+commit d90c9d91b4e4ce586c2ce475b39b8a039c87c98c
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Wed Aug 12 18:20:51 2026 +0300
+
+    adding search bar
+
+diff --git a/styles.css b/styles.css
+index 706a495..955dae6 100644
+--- a/styles.css
++++ b/styles.css
+@@ -152,6 +152,93 @@ body {
+     font-weight: 400;
+ }
+ 
++/* Prompt Box */
++.prompt-box {
++    width: 100%;
++    max-width: 580px;
++    background-color: #f7f7f5;
++    border-radius: 32px;
++    padding: 8px 16px 12px 16px;
++    display: flex;
++    flex-direction: column;
++    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), inset 0 2px 4px rgba(255, 255, 255, 0.7);
++    border: 1px solid #ececec;
++    margin-top: 24px;
++}
++
++.prompt-input {
++    width: 100%;
++    background: transparent;
++    border: none;
++    font-family: 'Inter', sans-serif;
++    font-size: 1.15rem;
++    color: #26273b;
++    padding: 4px 12px 12px 12px;
++    outline: none;
++}
++
++.prompt-input::placeholder {
++    color: #8c8f9f;
++}
++
++.prompt-actions {
++    display: flex;
++    justify-content: space-between;
++    align-items: flex-end;
++    padding: 0 4px;
++}
++
++.prompt-actions-left {
++    display: flex;
++    gap: 12px;
++    align-items: center;
++}
++
++.prompt-btn {
++    background-color: #fafafa;
++    border: none;
++    cursor: pointer;
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    color: #444;
++    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
++    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
++}
++
++.prompt-btn:hover {
++    transform: translateY(-1px);
++    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
++    background-color: #ffffff;
++}
++
++.prompt-btn-pill {
++    border-radius: 24px;
++    padding: 10px 16px;
++    gap: 8px;
++    height: 46px;
++}
++
++.prompt-btn-circle {
++    border-radius: 50%;
++    width: 46px;
++    height: 46px;
++}
++
++.prompt-btn-submit {
++    background-color: #0c1a29;
++    color: #ffffff;
++    border-radius: 50%;
++    width: 50px;
++    height: 50px;
++    box-shadow: 0 4px 12px rgba(12, 26, 41, 0.15);
++}
++
++.prompt-btn-submit:hover {
++    box-shadow: 0 6px 16px rgba(12, 26, 41, 0.25);
++    background-color: #12283e;
++}
++
+ @media (max-width: 992px) {
+     .nav {
+         display: none;
+
+commit 504d660ad9f832bc582c4fae4cfde14534e3cc17
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 19:46:46 2026 +0300
+
+    new typography
+
+diff --git a/styles.css b/styles.css
+index 6aadbf9..706a495 100644
+--- a/styles.css
++++ b/styles.css
+@@ -370,9 +370,9 @@ body {
+ }
+ 
+ .use-cases-left h2 {
+-    font-family: 'Switzer', sans-serif;
++    font-family: 'Instrument Serif', serif;
+     font-size: 3.5rem;
+-    font-weight: 500;
++    font-weight: 400;
+     color: #26273b;
+     margin-bottom: 24px;
+     letter-spacing: -0.02em;
+@@ -402,9 +402,9 @@ body {
+ }
+ 
+ .use-case-card h3 {
+-    font-family: 'Switzer', sans-serif;
++    font-family: 'Instrument Serif', serif;
+     font-size: 2rem;
+-    font-weight: 500;
++    font-weight: 400;
+     color: #26273b;
+     margin-bottom: 48px;
+ }
+
+commit 1ee3063f18d7631dedd854e755673cf0bda6ccf6
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 19:43:32 2026 +0300
+
+    fixing button
+
+diff --git a/styles.css b/styles.css
+index bb321d1..6aadbf9 100644
+--- a/styles.css
++++ b/styles.css
+@@ -484,8 +484,8 @@ body {
+     background-color: transparent;
+     border: none;
+     border-radius: 50%;
+-    width: 40px;
+-    height: 40px;
++    width: 32px;
++    height: 32px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+@@ -495,8 +495,8 @@ body {
+ }
+ 
+ .carousel-btn svg {
+-    width: 20px;
+-    height: 20px;
++    width: 16px;
++    height: 16px;
+ }
+ 
+ .carousel-btn:hover {
+
+commit 99e17f1bb724cb63b6885518399d17e4e3195741
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 19:39:12 2026 +0300
+
+    new button
+
+diff --git a/styles.css b/styles.css
+index ae674f4..bb321d1 100644
+--- a/styles.css
++++ b/styles.css
+@@ -262,7 +262,7 @@ body {
+     font-family: 'Switzer', sans-serif;
+     font-size: 1.1rem;
+     line-height: 1.5;
+-    max-width: 50%;
++    max-width: 100%;
+ }
+ 
+ .feature-card-dark {
+@@ -340,3 +340,188 @@ body {
+         gap: 20px;
+     }
+ }
++
++/* Use Cases Section */
++.use-cases-section {
++    max-width: 1400px;
++    width: 100%;
++    margin: 40px auto 80px;
++    padding: 60px;
++    display: flex;
++    justify-content: space-between;
++    gap: 40px;
++    background-color: #fafbfc;
++    border-radius: 40px;
++}
++
++.use-cases-left {
++    flex: 1;
++    max-width: 500px;
++    padding-top: 20px;
++}
++
++.use-cases-left .section-subtitle {
++    font-family: 'Switzer', sans-serif;
++    font-size: 0.95rem;
++    color: #8c8f9f;
++    font-weight: 600;
++    display: block;
++    margin-bottom: 16px;
++}
++
++.use-cases-left h2 {
++    font-family: 'Switzer', sans-serif;
++    font-size: 3.5rem;
++    font-weight: 500;
++    color: #26273b;
++    margin-bottom: 24px;
++    letter-spacing: -0.02em;
++}
++
++.use-cases-left p {
++    font-family: 'Switzer', sans-serif;
++    font-size: 1.15rem;
++    color: #5e617d;
++    line-height: 1.6;
++}
++
++.use-cases-right {
++    flex: 1;
++}
++
++.use-case-card {
++    background-color: #ffffff;
++    border-radius: 24px;
++    padding: 40px 40px 0 40px;
++    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
++    display: flex;
++    flex-direction: column;
++    height: 100%;
++    position: relative;
++    overflow: hidden;
++}
++
++.use-case-card h3 {
++    font-family: 'Switzer', sans-serif;
++    font-size: 2rem;
++    font-weight: 500;
++    color: #26273b;
++    margin-bottom: 48px;
++}
++
++.use-case-card p {
++    font-family: 'Switzer', sans-serif;
++    font-size: 1.05rem;
++    color: #5e617d;
++    line-height: 1.6;
++    margin-bottom: 30px;
++}
++
++.learn-more-link {
++    display: flex;
++    align-items: center;
++    gap: 12px;
++    font-family: 'Inter', sans-serif;
++    font-weight: 500;
++    font-size: 0.95rem;
++    color: #26273b;
++    text-decoration: none;
++    margin-bottom: 40px;
++    transition: opacity 0.2s;
++}
++
++.learn-more-link:hover {
++    opacity: 0.7;
++}
++
++.learn-more-link .arrow-icon {
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    width: 24px;
++    height: 24px;
++    background-color: #f1f4fd;
++    border-radius: 50%;
++    color: #26273b;
++}
++
++.card-image-container {
++    margin-top: auto;
++    width: 100%;
++    display: flex;
++    justify-content: center;
++}
++
++.card-image-container img {
++    max-width: 100%;
++    height: auto;
++    object-fit: contain;
++    border-radius: 12px 12px 0 0;
++    display: block;
++}
++
++/* Carousel Controls */
++.carousel-controls {
++    display: flex;
++    justify-content: center;
++    align-items: center;
++    margin-top: 12px;
++    position: relative;
++    z-index: 10;
++    
++    background-color: #ffffff;
++    border: 1px solid #e1e3ed;
++    border-radius: 40px;
++    padding: 4px;
++    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
++    width: fit-content;
++    margin-left: auto;
++    margin-right: auto;
++    gap: 4px;
++}
++
++.carousel-btn {
++    background-color: transparent;
++    border: none;
++    border-radius: 50%;
++    width: 40px;
++    height: 40px;
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    cursor: pointer;
++    color: #26273b;
++    transition: all 0.2s ease;
++}
++
++.carousel-btn svg {
++    width: 20px;
++    height: 20px;
++}
++
++.carousel-btn:hover {
++    background-color: #f1f4fd;
++    border-color: #f1f4fd;
++    transform: translateY(-2px);
++}
++
++.carousel-btn:active {
++    transform: translateY(0);
++}
++
++/* Card Content Transitions */
++#card-title, #card-desc {
++    transition: opacity 0.2s ease;
++}
++
++@media (max-width: 992px) {
++    .use-cases-section {
++        flex-direction: column;
++        padding: 40px 24px;
++        border-radius: 24px;
++    }
++    
++    .use-cases-left h2 {
++        font-size: 2.5rem;
++    }
++}
+
+commit 32e444cbd8812b0e68ef8af1395622f52802fd60
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 19:08:44 2026 +0300
+
+    fix
+
+diff --git a/styles.css b/styles.css
+index 0005b3b..ae674f4 100644
+--- a/styles.css
++++ b/styles.css
+@@ -245,8 +245,7 @@ body {
+ }
+ 
+ .feature-card-large {
+-    background: #f1f4fd url('assets/flower.jpg') no-repeat right bottom;
+-    background-size: cover; /* Fallback to cover if it includes the whole card */
++    background-color: #f1f4fd;
+     justify-content: space-between;
+ }
+ 
+
+commit ff33ca20c62a4c04f149392eae45bc9731c69a38
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 18:51:30 2026 +0300
+
+    fixing new page
+
+diff --git a/styles.css b/styles.css
+index ac21b71..0005b3b 100644
+--- a/styles.css
++++ b/styles.css
+@@ -208,7 +208,7 @@ body {
+ }
+ 
+ .about-title-col h2 {
+-    font-family: 'Switzer', sans-serif;
++    font-family: 'Instrument Serif', serif;
+     font-size: 3.5rem;
+     font-weight: 400;
+     color: #26273b;
+@@ -252,9 +252,9 @@ body {
+ 
+ .feature-title-light {
+     color: #2e305e;
+-    font-family: 'Switzer', sans-serif;
++    font-family: 'Instrument Serif', serif;
+     font-size: 2rem;
+-    font-weight: 500;
++    font-weight: 400;
+     max-width: 60%;
+ }
+ 
+@@ -272,9 +272,9 @@ body {
+ }
+ 
+ .feature-card-dark h3 {
+-    font-family: 'Switzer', sans-serif;
++    font-family: 'Instrument Serif', serif;
+     font-size: 1.75rem;
+-    font-weight: 500;
++    font-weight: 400;
+     margin-bottom: 24px;
+     color: #ffffff;
+ }
+
+commit ef27deef94bc982b358a8acf17534cde93ad0a02
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 18:25:38 2026 +0300
+
+    adding new page
+
+diff --git a/styles.css b/styles.css
+index 90de28a..ac21b71 100644
+--- a/styles.css
++++ b/styles.css
+@@ -97,7 +97,8 @@ body {
+ .main-content {
+     padding: 0 24px 32px 24px;
+     display: flex;
+-    justify-content: center;
++    flex-direction: column;
++    align-items: center;
+ }
+ 
+ .hero-card {
+@@ -143,6 +144,7 @@ body {
+ }
+ 
+ .hero-content p {
++    font-family: 'Switzer', sans-serif;
+     font-size: 1.15rem;
+     color: var(--text-muted);
+     line-height: 1.6;
+@@ -182,3 +184,160 @@ body {
+     }
+ }
+ 
++/* About Section */
++.about-section {
++    max-width: 1400px;
++    width: 100%;
++    margin: 80px auto 40px;
++    padding: 0;
++}
++
++.about-header {
++    display: flex;
++    justify-content: space-between;
++    align-items: flex-start;
++    margin-bottom: 60px;
++    padding: 0;
++}
++
++.about-title-col {
++    display: flex;
++    flex-direction: column;
++    align-items: flex-start;
++    gap: 32px;
++}
++
++.about-title-col h2 {
++    font-family: 'Switzer', sans-serif;
++    font-size: 3.5rem;
++    font-weight: 400;
++    color: #26273b;
++    letter-spacing: -0.02em;
++}
++
++.about-desc-col {
++    margin-top: 10px;
++}
++
++.about-desc-col p {
++    font-family: 'Switzer', sans-serif;
++    font-size: 1.5rem;
++    color: var(--text-muted);
++    line-height: 1.4;
++    font-weight: 400;
++}
++
++.features-grid {
++    display: grid;
++    grid-template-columns: 2fr 1fr 1fr;
++    gap: 24px;
++    margin-bottom: 80px;
++}
++
++.feature-card {
++    border-radius: 24px;
++    padding: 40px;
++    display: flex;
++    flex-direction: column;
++    position: relative;
++    overflow: hidden;
++    min-height: 420px;
++}
++
++.feature-card-large {
++    background: #f1f4fd url('assets/flower.jpg') no-repeat right bottom;
++    background-size: cover; /* Fallback to cover if it includes the whole card */
++    justify-content: space-between;
++}
++
++.feature-title-light {
++    color: #2e305e;
++    font-family: 'Switzer', sans-serif;
++    font-size: 2rem;
++    font-weight: 500;
++    max-width: 60%;
++}
++
++.feature-text-light {
++    color: #555c8c;
++    font-family: 'Switzer', sans-serif;
++    font-size: 1.1rem;
++    line-height: 1.5;
++    max-width: 50%;
++}
++
++.feature-card-dark {
++    background-color: #322f4b;
++    color: #ffffff;
++}
++
++.feature-card-dark h3 {
++    font-family: 'Switzer', sans-serif;
++    font-size: 1.75rem;
++    font-weight: 500;
++    margin-bottom: 24px;
++    color: #ffffff;
++}
++
++.feature-card-dark p {
++    font-family: 'Switzer', sans-serif;
++    font-size: 1.05rem;
++    line-height: 1.5;
++    color: #a1a3bb;
++    margin-top: auto;
++}
++
++.partners-section {
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    padding: 20px 0;
++}
++
++.partners-title {
++    font-family: 'Switzer', sans-serif;
++    font-size: 0.95rem;
++    color: #8c8f9f;
++    line-height: 1.5;
++    font-weight: 500;
++}
++
++.partners-logos {
++    display: flex;
++    gap: 40px;
++    align-items: center;
++}
++
++.logo-placeholder {
++    color: #aeb1cc;
++    font-size: 1.1rem;
++    font-family: 'Inter', sans-serif;
++    line-height: 1.1;
++    text-align: center;
++}
++
++@media (max-width: 992px) {
++    .about-header {
++        flex-direction: column;
++        gap: 40px;
++    }
++    
++    .features-grid {
++        grid-template-columns: 1fr;
++    }
++    
++    .feature-card-large {
++        background-position: center;
++    }
++    
++    .partners-section {
++        flex-direction: column;
++        gap: 30px;
++        align-items: flex-start;
++    }
++    
++    .partners-logos {
++        flex-wrap: wrap;
++        gap: 20px;
++    }
++}
+
+commit f6d74ced80021a1cd383291c0b5355cc2e6e2f07
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 18:19:33 2026 +0300
+
+    fixing typography
+
+diff --git a/styles.css b/styles.css
+index a8d8c7e..90de28a 100644
+--- a/styles.css
++++ b/styles.css
+@@ -134,8 +134,9 @@ body {
+ }
+ 
+ .hero-content h1 {
+-    font-size: 4rem;
+-    font-weight: 500;
++    font-family: 'Instrument Serif', serif;
++    font-size: 4.5rem;
++    font-weight: 400;
+     margin-bottom: 20px;
+     color: #2b2c45;
+     letter-spacing: -0.02em;
+
+commit 2325fa174c6ca54ecaf905076ef277b1db9954dc
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 18:15:29 2026 +0300
+
+    fixing page
+
+diff --git a/styles.css b/styles.css
+index d6a9905..a8d8c7e 100644
+--- a/styles.css
++++ b/styles.css
+@@ -180,3 +180,4 @@ body {
+         padding: 0 16px 20px 16px;
+     }
+ }
++
+
+commit b946ad5304c37e4db9d27cdd3bcd76e59397a0dd
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 17:59:11 2026 +0300
+
+    Update landing page layout and background image
+
+diff --git a/styles.css b/styles.css
+index 95d8a86..d6a9905 100644
+--- a/styles.css
++++ b/styles.css
+@@ -1,282 +1,182 @@
+ :root {
++    --text-dark: #26273b;
++    --text-muted: #5e617d;
+     --bg-color: #ffffff;
+-    --text-main: #111111;
+-    --text-muted: #666666;
+-    --nav-bg: #111111;
+-    --nav-text: #cccccc;
+-    --font-sans: 'Inter', sans-serif;
+-    --font-serif: 'Newsreader', serif;
++    --btn-dark: #1e1e2d;
+ }
+ 
+ * {
++    box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+-    box-sizing: border-box;
+ }
+ 
+ body {
+-    font-family: var(--font-sans);
++    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+     background-color: var(--bg-color);
+-    color: var(--text-main);
++    color: var(--text-dark);
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+-    min-height: 100vh;
+-    position: relative;
+-    overflow-x: hidden;
+-}
+-
+-/* Subtle background gradient at the bottom */
+-.background-glow {
+-    position: fixed;
+-    bottom: -20vh;
+-    left: -10vw;
+-    width: 120vw;
+-    height: 40vh;
+-    background: radial-gradient(ellipse at bottom, rgba(255, 230, 200, 0.4) 0%, rgba(255, 200, 255, 0.3) 40%, rgba(255, 255, 255, 0) 70%);
+-    z-index: -1;
+-    pointer-events: none;
+-    filter: blur(30px);
+ }
+ 
+-.page-container {
+-    max-width: 900px;
+-    margin: 0 auto;
+-    padding: 0 30px;
+-}
+-
+-/* Navbar */
+-.navbar {
++/* Header */
++.header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+-    background-color: var(--nav-bg);
+-    border-radius: 100px;
+-    margin: 24px auto;
+-    padding: 4px 4px 4px 18px;
+-    max-width: 600px;
+-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
++    padding: 24px 48px;
++    background-color: #ffffff;
+ }
+ 
+-.nav-left {
++.logo {
+     display: flex;
+     align-items: center;
+-    gap: 6px;
+-    color: white;
++    gap: 8px;
++    font-weight: 600;
++    font-size: 1.1rem;
++    color: var(--text-dark);
+ }
+ 
+-.logo-text {
+-    font-weight: 600;
+-    font-size: 14px;
+-    letter-spacing: -0.02em;
++.logo svg {
++    color: var(--text-dark);
+ }
+ 
+-.nav-links {
++.nav {
+     display: flex;
+-    align-items: center;
++    gap: 36px;
++    position: absolute;
++    left: 50%;
++    transform: translateX(-50%);
+ }
+ 
+-.nav-links a {
+-    color: var(--nav-text);
++.nav a {
+     text-decoration: none;
+-    font-size: 11px;
++    color: var(--text-muted);
++    font-size: 0.95rem;
+     font-weight: 500;
+-    margin: 0 12px;
+-    transition: color 0.2s;
+-    display: flex;
+-    align-items: center;
+-    gap: 3px;
++    transition: color 0.2s ease;
+ }
+ 
+-.nav-links a:hover {
+-    color: white;
++.nav a:hover {
++    color: var(--text-dark);
+ }
+ 
+-.caret {
+-    margin-top: 1px;
+-}
+-
+-.nav-actions {
+-    display: flex;
+-    align-items: center;
+-}
+-
+-.btn-login {
+-    background: transparent;
+-    color: white;
++/* Buttons */
++.btn {
+     border: none;
+-    font-size: 11px;
+-    font-weight: 500;
+-    margin-right: 12px;
+-    cursor: pointer;
+-    font-family: inherit;
+-}
+-
+-.btn-primary {
+-    background: white;
+-    color: black;
+-    border: none;
+-    border-radius: 100px;
+-    padding: 8px 15px;
+-    font-size: 11px;
++    border-radius: 999px;
++    padding: 10px 24px;
++    font-family: 'Inter', sans-serif;
+     font-weight: 600;
++    font-size: 0.9rem;
+     cursor: pointer;
+-    font-family: inherit;
+-    transition: transform 0.1s;
+-}
+-
+-.btn-primary:active {
+-    transform: scale(0.98);
+-}
+-
+-/* Hero Section */
+-.hero-section {
+-    margin-bottom: 36px;
++    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+ }
+ 
+-.hero-image {
+-    width: 100%;
+-    height: 320px;
+-    object-fit: cover;
+-    object-position: center 40%;
+-    display: block;
+-    border-radius: 2px;
++.btn:hover {
++    transform: translateY(-1px);
++    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+ }
+ 
+-/* Content Section */
+-.content-section {
+-    display: flex;
+-    justify-content: space-between;
+-    margin-bottom: 75px;
+-    gap: 30px;
++.btn:active {
++    transform: translateY(0);
+ }
+ 
+-.content-left {
+-    flex: 1;
+-    max-width: 450px;
++.btn-dark {
++    background-color: var(--btn-dark);
++    color: #ffffff;
+ }
+ 
+-.headline {
+-    font-size: 42px;
+-    line-height: 1.1;
+-    letter-spacing: -0.04em;
+-    font-weight: 600;
+-    margin-bottom: 48px;
+-}
+-
+-.highlight {
+-    font-family: var(--font-serif);
+-    font-style: italic;
+-    font-weight: 400;
+-    font-size: 1.05em;
+-    letter-spacing: -0.02em;
++.btn-large {
++    padding: 14px 32px;
++    font-size: 1rem;
++    margin-top: 24px;
+ }
+ 
+-/* Logos */
+-.logo-cloud-title {
+-    font-size: 11px;
+-    color: var(--text-muted);
+-    margin-bottom: 15px;
+-    font-weight: 500;
++/* Main Content */
++.main-content {
++    padding: 0 24px 32px 24px;
++    display: flex;
++    justify-content: center;
+ }
+ 
+-.logos {
++.hero-card {
++    width: 100%;
++    max-width: 1400px;
++    height: calc(100vh - 120px);
++    min-height: 700px;
++    border-radius: 40px;
++    position: relative;
++    overflow: hidden;
++    /* Seamless blend from white top to image bottom */
++    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 35%, rgba(255,255,255,0) 65%), url('assets/21.jpg') center bottom;
++    background-size: cover;
++    background-repeat: no-repeat;
+     display: flex;
++    flex-direction: column;
+     align-items: center;
+-    gap: 24px;
+-    flex-wrap: wrap;
++    box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+ }
+ 
+-.brand-logo {
+-    display: inline-flex;
++.hero-content {
++    text-align: center;
++    margin-top: 100px;
++    display: flex;
++    flex-direction: column;
+     align-items: center;
+-    font-weight: 700;
+-    font-size: 14px;
+-    color: black;
+-    letter-spacing: -0.02em;
++    z-index: 2;
++    padding: 0 20px;
+ }
+ 
+-.brand-logo.monzo {
+-    font-size: 15px;
+-}
+-
+-.brand-logo.guild {
+-    font-family: var(--font-serif);
+-    font-weight: 600;
+-    font-size: 16.5px;
+-}
+-
+-.brand-logo.cleo {
+-    font-size: 12px;
+-    font-weight: 800;
+-    letter-spacing: 0;
+-}
+-
+-.cleo-box {
+-    border: 2px solid black;
+-    padding: 1px 5px;
+-    border-radius: 3px;
+-}
+-
+-.brand-logo.trademe {
+-    font-size: 14px;
+-    font-weight: 700;
+-    letter-spacing: -0.05em;
+-}
+-
+-.brand-logo.paradigm {
+-    font-size: 14px;
+-    font-weight: 600;
++.cross-icon {
++    margin-bottom: 24px;
++    color: var(--text-dark);
+ }
+ 
+-/* Content Right */
+-.content-right {
+-    flex: 0 0 285px;
+-    padding-top: 60px;
+-}
+-
+-.description {
+-    font-size: 12px;
+-    line-height: 1.5;
+-    color: var(--text-main);
+-    margin-bottom: 18px;
+-    max-width: 255px;
+-}
+-
+-.email-form {
+-    display: flex;
+-    background-color: #f0f0f0;
+-    border-radius: 100px;
+-    padding: 4px;
+-    align-items: center;
+-}
+-
+-.email-input {
+-    flex: 1;
+-    border: none;
+-    background: transparent;
+-    padding: 8px 12px;
+-    font-size: 11px;
+-    outline: none;
+-    font-family: inherit;
+-    color: var(--text-main);
++.hero-content h1 {
++    font-size: 4rem;
++    font-weight: 500;
++    margin-bottom: 20px;
++    color: #2b2c45;
++    letter-spacing: -0.02em;
+ }
+ 
+-.email-input::placeholder {
+-    color: #888;
++.hero-content p {
++    font-size: 1.15rem;
++    color: var(--text-muted);
++    line-height: 1.6;
++    margin-bottom: 32px;
++    font-weight: 400;
+ }
+ 
+-.form-btn {
+-    background-color: black;
+-    color: white;
+-    padding: 9px 18px;
++@media (max-width: 992px) {
++    .nav {
++        display: none;
++    }
++    
++    .hero-content h1 {
++        font-size: 3rem;
++    }
++    
++    .hero-card {
++        border-radius: 24px;
++    }
+ }
+ 
+-/* Responsive */
+-@media (max-width: 700px) {
+-    .content-section {
+-        flex-direction: column;
++@media (max-width: 576px) {
++    .header {
++        padding: 16px 20px;
++    }
++    
++    .hero-content h1 {
++        font-size: 2.2rem;
++    }
++    
++    .hero-content p {
++        font-size: 1rem;
+     }
+-    .content-right {
+-        padding-top: 0;
++    
++    .main-content {
++        padding: 0 16px 20px 16px;
+     }
+ }
+
+commit 3df16e3cff537391fa85a6bb27b1860e49c1b890
+Author: kwstx <kwstasgalan32@gmail.com>
+Date:   Tue Aug 11 16:55:56 2026 +0300
+
+    first commit
+
+diff --git a/styles.css b/styles.css
+new file mode 100644
+index 0000000..95d8a86
+--- /dev/null
++++ b/styles.css
+@@ -0,0 +1,282 @@
++:root {
++    --bg-color: #ffffff;
++    --text-main: #111111;
++    --text-muted: #666666;
++    --nav-bg: #111111;
++    --nav-text: #cccccc;
++    --font-sans: 'Inter', sans-serif;
++    --font-serif: 'Newsreader', serif;
++}
++
++* {
++    margin: 0;
++    padding: 0;
++    box-sizing: border-box;
++}
++
++body {
++    font-family: var(--font-sans);
++    background-color: var(--bg-color);
++    color: var(--text-main);
++    -webkit-font-smoothing: antialiased;
++    -moz-osx-font-smoothing: grayscale;
++    min-height: 100vh;
++    position: relative;
++    overflow-x: hidden;
++}
++
++/* Subtle background gradient at the bottom */
++.background-glow {
++    position: fixed;
++    bottom: -20vh;
++    left: -10vw;
++    width: 120vw;
++    height: 40vh;
++    background: radial-gradient(ellipse at bottom, rgba(255, 230, 200, 0.4) 0%, rgba(255, 200, 255, 0.3) 40%, rgba(255, 255, 255, 0) 70%);
++    z-index: -1;
++    pointer-events: none;
++    filter: blur(30px);
++}
++
++.page-container {
++    max-width: 900px;
++    margin: 0 auto;
++    padding: 0 30px;
++}
++
++/* Navbar */
++.navbar {
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    background-color: var(--nav-bg);
++    border-radius: 100px;
++    margin: 24px auto;
++    padding: 4px 4px 4px 18px;
++    max-width: 600px;
++    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
++}
++
++.nav-left {
++    display: flex;
++    align-items: center;
++    gap: 6px;
++    color: white;
++}
++
++.logo-text {
++    font-weight: 600;
++    font-size: 14px;
++    letter-spacing: -0.02em;
++}
++
++.nav-links {
++    display: flex;
++    align-items: center;
++}
++
++.nav-links a {
++    color: var(--nav-text);
++    text-decoration: none;
++    font-size: 11px;
++    font-weight: 500;
++    margin: 0 12px;
++    transition: color 0.2s;
++    display: flex;
++    align-items: center;
++    gap: 3px;
++}
++
++.nav-links a:hover {
++    color: white;
++}
++
++.caret {
++    margin-top: 1px;
++}
++
++.nav-actions {
++    display: flex;
++    align-items: center;
++}
++
++.btn-login {
++    background: transparent;
++    color: white;
++    border: none;
++    font-size: 11px;
++    font-weight: 500;
++    margin-right: 12px;
++    cursor: pointer;
++    font-family: inherit;
++}
++
++.btn-primary {
++    background: white;
++    color: black;
++    border: none;
++    border-radius: 100px;
++    padding: 8px 15px;
++    font-size: 11px;
++    font-weight: 600;
++    cursor: pointer;
++    font-family: inherit;
++    transition: transform 0.1s;
++}
++
++.btn-primary:active {
++    transform: scale(0.98);
++}
++
++/* Hero Section */
++.hero-section {
++    margin-bottom: 36px;
++}
++
++.hero-image {
++    width: 100%;
++    height: 320px;
++    object-fit: cover;
++    object-position: center 40%;
++    display: block;
++    border-radius: 2px;
++}
++
++/* Content Section */
++.content-section {
++    display: flex;
++    justify-content: space-between;
++    margin-bottom: 75px;
++    gap: 30px;
++}
++
++.content-left {
++    flex: 1;
++    max-width: 450px;
++}
++
++.headline {
++    font-size: 42px;
++    line-height: 1.1;
++    letter-spacing: -0.04em;
++    font-weight: 600;
++    margin-bottom: 48px;
++}
++
++.highlight {
++    font-family: var(--font-serif);
++    font-style: italic;
++    font-weight: 400;
++    font-size: 1.05em;
++    letter-spacing: -0.02em;
++}
++
++/* Logos */
++.logo-cloud-title {
++    font-size: 11px;
++    color: var(--text-muted);
++    margin-bottom: 15px;
++    font-weight: 500;
++}
++
++.logos {
++    display: flex;
++    align-items: center;
++    gap: 24px;
++    flex-wrap: wrap;
++}
++
++.brand-logo {
++    display: inline-flex;
++    align-items: center;
++    font-weight: 700;
++    font-size: 14px;
++    color: black;
++    letter-spacing: -0.02em;
++}
++
++.brand-logo.monzo {
++    font-size: 15px;
++}
++
++.brand-logo.guild {
++    font-family: var(--font-serif);
++    font-weight: 600;
++    font-size: 16.5px;
++}
++
++.brand-logo.cleo {
++    font-size: 12px;
++    font-weight: 800;
++    letter-spacing: 0;
++}
++
++.cleo-box {
++    border: 2px solid black;
++    padding: 1px 5px;
++    border-radius: 3px;
++}
++
++.brand-logo.trademe {
++    font-size: 14px;
++    font-weight: 700;
++    letter-spacing: -0.05em;
++}
++
++.brand-logo.paradigm {
++    font-size: 14px;
++    font-weight: 600;
++}
++
++/* Content Right */
++.content-right {
++    flex: 0 0 285px;
++    padding-top: 60px;
++}
++
++.description {
++    font-size: 12px;
++    line-height: 1.5;
++    color: var(--text-main);
++    margin-bottom: 18px;
++    max-width: 255px;
++}
++
++.email-form {
++    display: flex;
++    background-color: #f0f0f0;
++    border-radius: 100px;
++    padding: 4px;
++    align-items: center;
++}
++
++.email-input {
++    flex: 1;
++    border: none;
++    background: transparent;
++    padding: 8px 12px;
++    font-size: 11px;
++    outline: none;
++    font-family: inherit;
++    color: var(--text-main);
++}
++
++.email-input::placeholder {
++    color: #888;
++}
++
++.form-btn {
++    background-color: black;
++    color: white;
++    padding: 9px 18px;
++}
++
++/* Responsive */
++@media (max-width: 700px) {
++    .content-section {
++        flex-direction: column;
++    }
++    .content-right {
++        padding-top: 0;
++    }
++}
