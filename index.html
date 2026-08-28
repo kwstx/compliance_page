@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=7">
     <style>
         /* How It Works Section Direct Styles */
         .how-it-works-section {
@@ -130,13 +130,13 @@
         }
 
         .hw-card-title {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #17152B;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.015em;
-            line-height: 1.3;
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: #2b2c45;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
             position: relative;
             z-index: 2;
         }
@@ -204,6 +204,9 @@
             .hw-main-heading,
             .hw-sub-heading {
                 font-size: 2.2rem;
+            }
+            .hw-card-title {
+                font-size: 1.75rem;
             }
             .how-it-works-cards-wrapper {
                 height: 255px;
@@ -493,6 +496,15 @@
             </div>
         </section>
 
+        <!-- Flexible Solutions Section -->
+        <section class="solutions-section">
+            <div class="solutions-content">
+                <h2 class="solutions-text">
+                    <span class="solutions-bold">Payment solutions built for high-risk businesses.</span> <span class="solutions-muted">Access reliable processing, smart routing, and risk tools — designed to keep your payments flowing as you grow.</span>
+                </h2>
+            </div>
+        </section>
+
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const container = document.getElementById('hwCardsContainer');
@@ -569,6 +581,27 @@
 
                     window.addEventListener('resize', updateLayout);
                     updateLayout();
+                }
+
+                // Headings fade-in animation trigger
+                const animatedHeadings = document.querySelectorAll('.explore-section h2, .how-it-works-title');
+                if (animatedHeadings.length > 0) {
+                    if ('IntersectionObserver' in window) {
+                        const headingObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('is-visible');
+                                    headingObserver.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.15,
+                            rootMargin: '0px 0px -40px 0px'
+                        });
+                        animatedHeadings.forEach(el => headingObserver.observe(el));
+                    } else {
+                        animatedHeadings.forEach(el => el.classList.add('is-visible'));
+                    }
                 }
             });
         </script>
