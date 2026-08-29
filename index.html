@@ -3,233 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloomFi - High-risk payments. We’ll keep them flowing.</title>
+    <title>Engram - High-risk payments. We’ll keep them flowing.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=26">
-    <style>
-        /* How It Works Section Direct Styles */
-        .how-it-works-section {
-            max-width: 1200px;
-            width: 100%;
-            margin: 60px auto 100px auto;
-            padding: 0 24px;
-            box-sizing: border-box;
-        }
-
-        .how-it-works-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 32px;
-        }
-
-        .how-it-works-title {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .hw-main-heading,
-        .hw-sub-heading {
-            font-family: 'Instrument Serif', serif;
-            font-size: 4.5rem;
-            font-weight: 400;
-            color: #2b2c45;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            margin: 0;
-        }
-
-        .hw-title-emoji {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
-
-        .hw-title-emoji svg {
-            width: 0.8em;
-            height: 0.8em;
-            vertical-align: -0.05em;
-            margin: 0 4px;
-        }
-
-        .how-it-works-nav {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 4px;
-        }
-
-        .hw-nav-btn {
-            background-color: #141126;
-            color: #ffffff;
-            border: none;
-            width: 48px;
-            height: 34px;
-            border-radius: 17px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.15s ease;
-        }
-
-        .hw-nav-btn:hover {
-            background-color: #2b2649;
-            transform: scale(1.04);
-        }
-
-        .hw-nav-btn:active {
-            transform: scale(0.97);
-        }
-
-        .how-it-works-cards-wrapper {
-            position: relative;
-            width: 100%;
-            height: 270px;
-            overflow: hidden;
-        }
-
-        .how-it-works-cards {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hw-card {
-            position: absolute;
-            top: 0;
-            width: 380px;
-            height: 250px;
-            border-radius: 24px;
-            padding: 26px 28px 22px 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            overflow: hidden;
-            box-sizing: border-box;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), -4px 0 16px rgba(0, 0, 0, 0.04);
-            transition: left 0.45s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .hw-card:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08), -6px 0 20px rgba(0, 0, 0, 0.06);
-        }
-
-        .hw-badge {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            margin-bottom: 14px;
-        }
-
-        .hw-card-title {
-            font-family: 'Instrument Serif', serif;
-            font-size: 2rem;
-            font-weight: 400;
-            color: #2b2c45;
-            margin: 0 0 8px 0;
-            letter-spacing: -0.02em;
-            line-height: 1.15;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hw-card-desc {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 0.84rem;
-            font-weight: 400;
-            color: #4E4A66;
-            line-height: 1.48;
-            margin: 0;
-            max-width: 82%;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hw-card-graphic {
-            position: absolute;
-            bottom: 8px;
-            right: 12px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .card-purple {
-            background-color: #E4DCFD !important;
-        }
-
-        .card-yellow {
-            background-color: #FDE6B4 !important;
-        }
-
-        .card-cyan {
-            background-color: #D5F4ED !important;
-        }
-
-        .card-peach {
-            background-color: #FCE2D2 !important;
-        }
-
-        .card-blue {
-            background-color: #E0E7FD !important;
-        }
-
-        @media (max-width: 992px) {
-            .hw-main-heading,
-            .hw-sub-heading {
-                font-size: 3rem;
-            }
-            .how-it-works-cards-wrapper {
-                height: 270px;
-            }
-            .hw-card {
-                width: 330px;
-                height: 250px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .how-it-works-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-            .hw-main-heading,
-            .hw-sub-heading {
-                font-size: 2.2rem;
-            }
-            .hw-card-title {
-                font-size: 1.75rem;
-            }
-            .how-it-works-cards-wrapper {
-                height: 255px;
-            }
-            .hw-card {
-                width: 82vw;
-                height: 240px;
-                padding: 22px 18px;
-            }
-            .hw-card-desc {
-                max-width: 95%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css?v=35">
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-            BloomFi
+            Engram
         </div>
         <nav class="nav">
             <a href="#features">Features</a>
@@ -238,7 +23,7 @@
             <a href="#pricing">Pricing</a>
         </nav>
         <div class="header-action">
-            <button class="btn btn-dark">Launch BETA</button>
+            <a href="contact.html" class="btn btn-dark" style="text-decoration: none; display: inline-flex; align-items: center;">Launch BETA</a>
         </div>
     </header>
 
@@ -246,8 +31,11 @@
         <section class="hero-card">
             <div class="hero-content">
                 <h1>High-risk payments.<br>We’ll keep them flowing.</h1>
-                <p>Your payment infrastructure gets high-risk businesses approved,<br>keeps transactions flowing, and prevents payment disruptions.</p>
-                <button class="btn btn-dark btn-large">Join Waitlist</button>
+                <p class="hero-desc">
+                    <span class="hero-desc-line">Your payment infrastructure gets high-risk businesses approved,</span>
+                    <span class="hero-desc-line">keeps transactions flowing, and prevents payment disruptions.</span>
+                </p>
+                <a href="contact.html" class="btn btn-dark btn-large" style="text-decoration: none;">Get Started</a>
             </div>
         </section>
 
@@ -846,14 +634,14 @@
                     <h2 class="cta-title">Ready to keep your payments flowing?</h2>
                     <p class="cta-description">Tell us about your business and processing needs. We’ll help you find the right payment setup and get you processing reliably.</p>
                     <div class="cta-buttons-row">
-                        <a href="#get-started" class="btn btn-dark cta-btn">Get Started</a>
+                        <a href="contact.html" class="btn btn-dark cta-btn">Get Started</a>
                     </div>
                 </div>
             </div>
 
             <!-- Footer -->
             <footer class="cta-footer-bottom">
-                <p class="cta-copyright">© 2025 BloomFi. All Rights Reserved.</p>
+                <p class="cta-copyright">© 2025 Engram. All Rights Reserved.</p>
                 <nav class="cta-social-links" aria-label="Footer links">
                     <a href="terms.html" class="cta-social-link">Terms of Service</a>
                     <a href="privacy.html" class="cta-social-link">Privacy Policy</a>
@@ -932,18 +720,21 @@
                     const totalCards = cards.length;
 
                     function updateLayout() {
-                        const isMobile = window.innerWidth <= 576;
-                        const isTablet = window.innerWidth <= 992 && !isMobile;
+                        const isSmallMobile = window.innerWidth <= 380;
+                        const isMobile = window.innerWidth <= 576 && !isSmallMobile;
+                        const isTablet = window.innerWidth <= 992 && !isMobile && !isSmallMobile;
                         
                         let cardWidth = 380;
-                        if (isMobile) {
-                            cardWidth = Math.min(320, window.innerWidth * 0.82);
+                        if (isSmallMobile) {
+                            cardWidth = Math.min(270, window.innerWidth - 44);
+                        } else if (isMobile) {
+                            cardWidth = Math.min(310, window.innerWidth - 56);
                         } else if (isTablet) {
                             cardWidth = 330;
                         }
                         
-                        const gap = isMobile ? 12 : 20;
-                        const stackPeek = isMobile ? 65 : 135;
+                        const gap = (isMobile || isSmallMobile) ? 10 : 20;
+                        const stackPeek = isSmallMobile ? 42 : (isMobile ? 54 : 135);
 
                         cards.forEach((card, i) => {
                             let leftPos;
@@ -993,6 +784,37 @@
                             updateLayout();
                         });
                     });
+
+                    // Touch swipe support for mobile
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+
+                    container.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+
+                    container.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        const diff = touchStartX - touchEndX;
+                        if (Math.abs(diff) > 40) {
+                            if (diff > 0) {
+                                // Swipe left -> next
+                                if (activeIndex < totalCards - 1) {
+                                    activeIndex++;
+                                } else {
+                                    activeIndex = 0;
+                                }
+                            } else {
+                                // Swipe right -> prev
+                                if (activeIndex > 0) {
+                                    activeIndex--;
+                                } else {
+                                    activeIndex = totalCards - 2;
+                                }
+                            }
+                            updateLayout();
+                        }
+                    }, { passive: true });
 
                     window.addEventListener('resize', updateLayout);
                     updateLayout();
