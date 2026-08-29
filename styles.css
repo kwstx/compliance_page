@@ -1206,4 +1206,502 @@ body {
     }
 }
 
+/* Pricing Section */
+.pricing-section {
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto 120px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.pricing-container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    width: 100%;
+}
+
+.pricing-header-col {
+    flex: 0 0 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 0 16px 0;
+}
+
+.pricing-main-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #1e1f33;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+
+.pricing-toggle-wrapper {
+    margin-top: auto;
+    padding-top: 40px;
+}
+
+.pricing-toggle {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f1f2f5;
+    border-radius: 999px;
+    padding: 4px;
+    gap: 2px;
+}
+
+.pricing-toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #686b85;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pricing-toggle-btn:hover {
+    color: #1e1f33;
+}
+
+.pricing-toggle-btn.active {
+    background-color: #141126;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(20, 17, 38, 0.18);
+}
+
+.pricing-cards-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.pricing-card {
+    border-radius: 28px;
+    padding: 32px 26px 28px 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 490px;
+    box-sizing: border-box;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pricing-card.card-basic {
+    background-color: #f3f4f8;
+}
+
+.pricing-card.card-plus {
+    background-color: #e4f6dc;
+}
+
+.pricing-card.card-business {
+    background-color: #fde8d4;
+}
+
+.pricing-card-top {
+    margin-bottom: 24px;
+}
+
+.pricing-card-name {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: #1b1c2e;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.02em;
+}
+
+.pricing-card-desc {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #555770;
+    line-height: 1.42;
+    margin: 0;
+    min-height: 52px;
+}
+
+.pricing-card-price {
+    margin-bottom: 28px;
+}
+
+.price-value {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #1e1f33;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.pricing-card-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 36px;
+    flex-grow: 1;
+}
+
+.pricing-feature {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.84rem;
+    font-weight: 400;
+    color: #27283d;
+}
+
+.pricing-check-icon {
+    color: #1b1c2e;
+    flex-shrink: 0;
+}
+
+.pricing-card-bottom {
+    margin-top: auto;
+}
+
+.pricing-btn {
+    background-color: #141126;
+    color: #ffffff;
+    border: none;
+    border-radius: 999px;
+    padding: 11px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.pricing-btn:hover {
+    background-color: #2b2745;
+    transform: scale(1.03);
+}
+
+.pricing-btn:active {
+    transform: scale(0.98);
+}
+
+/* Pricing Scroll Reveal Animations */
+.pricing-header-col,
+.pricing-card {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.pricing-section.is-visible .pricing-header-col {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.05s;
+}
+
+.pricing-section.is-visible .pricing-card:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+}
+
+.pricing-section.is-visible .pricing-card:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+}
+
+.pricing-section.is-visible .pricing-card:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pricing-header-col,
+    .pricing-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Pricing Responsive Media Queries */
+@media (max-width: 1080px) {
+    .pricing-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .pricing-header-col {
+        flex: none;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .pricing-toggle-wrapper {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    .pricing-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .pricing-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pricing-card {
+        min-height: auto;
+        padding: 28px 24px;
+    }
+    
+    .pricing-card-desc {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .pricing-section {
+        margin: 30px auto 80px auto;
+        padding: 0 20px;
+    }
+
+    .pricing-header-col {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .pricing-main-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* Main Features Comparison Section */
+.main-features-container {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 64px;
+    padding-top: 48px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.features-header-col {
+    flex: 0 0 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.features-main-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #1e1f33;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px 0;
+    line-height: 1.2;
+}
+
+.features-labels-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-label-row {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #1e1f33;
+}
+
+.info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #8c8f9f;
+    margin-left: 2px;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.info-icon:hover {
+    color: #1e1f33;
+}
+
+.features-cards-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.feature-column {
+    border-radius: 28px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-column:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.feature-column.col-basic {
+    background-color: #f3f4f8;
+}
+
+.feature-column.col-plus {
+    background-color: #e4f6dc;
+}
+
+.feature-column.col-business {
+    background-color: #fde8d4;
+}
+
+.feature-value-row {
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+
+.feature-badge {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: #1e1f33;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.035);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.feature-badge:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Animations for Main Features */
+.main-features-container .features-header-col,
+.main-features-container .feature-column {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.pricing-section.is-visible .main-features-container .features-header-col {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.45s;
+}
+
+.pricing-section.is-visible .main-features-container .feature-column:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.55s;
+}
+
+.pricing-section.is-visible .main-features-container .feature-column:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.65s;
+}
+
+.pricing-section.is-visible .main-features-container .feature-column:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.75s;
+}
+
+/* Main Features Media Queries */
+@media (max-width: 1080px) {
+    .main-features-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .features-header-col {
+        flex: none;
+        width: 100%;
+    }
+
+    .features-labels-list {
+        display: none;
+    }
+
+    .features-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 860px) {
+    .main-features-container {
+        overflow-x: auto;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+        flex-direction: row;
+    }
+    
+    .main-features-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .main-features-container::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 999px;
+    }
+
+    .features-header-col {
+        flex: 0 0 140px;
+    }
+
+    .features-labels-list {
+        display: flex;
+    }
+
+    .features-cards-grid {
+        grid-template-columns: repeat(3, 160px);
+        flex: none;
+    }
+}
+
+
+
 
