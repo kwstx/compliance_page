@@ -210,6 +210,10 @@ a.btn-large {
     display: block;
 }
 
+.hero-desc-chunk {
+    display: inline;
+}
+
 .hero-content a,
 .hero-content a:hover,
 .hero-content a:focus,
@@ -328,16 +332,17 @@ a.btn-large {
 
     .hero-content p,
     .hero-desc {
-        font-size: clamp(0.78rem, 2.3vw, 1.05rem);
+        font-size: 1.05rem;
         line-height: 1.5;
         margin-bottom: 26px;
-        width: 100%;
-        max-width: 100%;
     }
 
     .hero-desc-line {
         display: block;
-        white-space: nowrap;
+    }
+
+    .hero-desc-chunk {
+        display: inline;
     }
 }
 
@@ -363,14 +368,16 @@ a.btn-large {
     
     .hero-content p,
     .hero-desc {
-        font-size: clamp(0.7rem, 2.5vw, 0.92rem);
-        line-height: 1.45;
+        font-size: 0.98rem;
+        line-height: 1.5;
         margin-bottom: 22px;
-        width: 100%;
-        max-width: 100%;
     }
 
     .hero-desc-line {
+        display: contents;
+    }
+
+    .hero-desc-chunk {
         display: block;
         white-space: nowrap;
     }
@@ -414,14 +421,18 @@ a.btn-large {
     
     .hero-content p,
     .hero-desc {
-        font-size: clamp(0.58rem, 2.6vw, 0.78rem);
-        line-height: 1.45;
+        font-size: 0.92rem;
+        line-height: 1.5;
         margin-bottom: 18px;
         width: 100%;
         max-width: 100%;
     }
     
     .hero-desc-line {
+        display: contents;
+    }
+
+    .hero-desc-chunk {
         display: block;
         white-space: nowrap;
     }
@@ -450,10 +461,15 @@ a.btn-large {
     
     .hero-content p,
     .hero-desc {
-        font-size: clamp(0.52rem, 2.5vw, 0.65rem);
+        font-size: 0.84rem;
+        line-height: 1.45;
     }
 
     .hero-desc-line {
+        display: contents;
+    }
+
+    .hero-desc-chunk {
         display: block;
         white-space: nowrap;
     }
