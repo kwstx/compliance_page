@@ -1231,12 +1231,12 @@ body {
 }
 
 .pricing-main-title {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 2.6rem;
-    font-weight: 500;
-    color: #1e1f33;
+    font-weight: 400;
+    color: #2b2c45;
     line-height: 1.15;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     margin: 0;
 }
 
@@ -1318,12 +1318,13 @@ body {
 }
 
 .pricing-card-name {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 1.85rem;
-    font-weight: 500;
-    color: #1b1c2e;
+    font-weight: 400;
+    color: #2b2c45;
     margin: 0 0 10px 0;
     letter-spacing: -0.02em;
+    line-height: 1.15;
 }
 
 .pricing-card-desc {
@@ -1341,11 +1342,11 @@ body {
 }
 
 .price-value {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 3.5rem;
     font-weight: 400;
-    color: #1e1f33;
-    letter-spacing: -0.03em;
+    color: #2b2c45;
+    letter-spacing: -0.02em;
     line-height: 1;
 }
 
@@ -1511,11 +1512,11 @@ body {
 }
 
 .features-main-title {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 2.2rem;
-    font-weight: 500;
-    color: #1e1f33;
-    letter-spacing: -0.025em;
+    font-weight: 400;
+    color: #2b2c45;
+    letter-spacing: -0.02em;
     margin: 0;
     line-height: 1.2;
 }
@@ -1714,6 +1715,214 @@ body {
     .features-cards-grid {
         grid-template-columns: repeat(3, 160px);
         flex: none;
+    }
+}
+
+/* ==========================================================================
+   CTA & Footer Section
+   ========================================================================== */
+.cta-footer-section {
+    max-width: 1200px;
+    width: 100%;
+    margin: 80px auto 40px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+.cta-card {
+    background: linear-gradient(90deg, rgba(15, 23, 35, 0.45) 0%, rgba(15, 23, 35, 0.2) 50%, rgba(15, 23, 35, 0) 100%), url('assets/cta_bg.jpg') no-repeat center center / cover;
+    border-radius: 28px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    padding: 64px 60px;
+    box-sizing: border-box;
+}
+
+.cta-left-content {
+    flex: 0 0 460px;
+    max-width: 100%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 24px 0;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cta-placeholder-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 36px;
+}
+
+.cta-line {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.cta-line-1 {
+    width: 380px;
+    max-width: 100%;
+}
+
+.cta-line-2 {
+    width: 380px;
+    max-width: 100%;
+}
+
+.cta-line-3 {
+    width: 290px;
+    max-width: 75%;
+}
+
+.cta-buttons-row {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(18, 18, 23, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    background-color: #000000;
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+}
+
+.cta-btn:active {
+    transform: translateY(0);
+}
+
+/* Footer Bottom Bar */
+.cta-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding: 0 4px;
+}
+
+.cta-copyright {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: #5e617d;
+    margin: 0;
+}
+
+.cta-social-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+}
+
+.cta-social-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: #5e617d;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+.cta-social-link:hover {
+    color: #1e1f33;
+}
+
+/* Responsive Media Queries for CTA & Footer */
+@media (max-width: 992px) {
+    .cta-footer-section {
+        margin: 60px auto 30px auto;
+    }
+
+    .cta-card {
+        padding: 48px 40px;
+        min-height: 340px;
+    }
+
+    .cta-left-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-card {
+        padding: 40px 28px;
+        min-height: auto;
+    }
+
+    .cta-left-content {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cta-footer-bottom {
+        flex-direction: column-reverse;
+        gap: 18px;
+        align-items: flex-start;
+        margin-top: 28px;
+    }
+
+    .cta-social-links {
+        gap: 22px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-title {
+        font-size: 1.8rem;
+    }
+
+    .cta-line-1,
+    .cta-line-2 {
+        width: 100%;
+    }
+
+    .cta-buttons-row {
+        width: 100%;
+    }
+
+    .cta-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
