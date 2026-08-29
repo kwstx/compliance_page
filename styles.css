@@ -1743,7 +1743,7 @@ body {
 }
 
 .cta-left-content {
-    flex: 0 0 460px;
+    flex: 0 0 520px;
     max-width: 100%;
     z-index: 2;
     display: flex;
@@ -1752,43 +1752,24 @@ body {
 }
 
 .cta-title {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Instrument Serif', serif;
     font-size: 2.25rem;
     font-weight: 600;
     color: #ffffff;
-    margin: 0 0 24px 0;
-    line-height: 1.15;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
     letter-spacing: -0.02em;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
-.cta-placeholder-lines {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 36px;
-}
-
-.cta-line {
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 999px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
-}
-
-.cta-line-1 {
-    width: 380px;
-    max-width: 100%;
-}
-
-.cta-line-2 {
-    width: 380px;
-    max-width: 100%;
-}
-
-.cta-line-3 {
-    width: 290px;
-    max-width: 75%;
+.cta-description {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 32px 0;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .cta-buttons-row {
@@ -1911,9 +1892,9 @@ body {
         font-size: 1.8rem;
     }
 
-    .cta-line-1,
-    .cta-line-2 {
-        width: 100%;
+    .cta-description {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
     }
 
     .cta-buttons-row {
