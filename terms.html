@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - BloomFi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=26">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo" style="text-decoration: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            BloomFi
+        </a>
+        <nav class="nav">
+            <a href="index.html#usdbloom">USDBloom</a>
+            <a href="index.html#business">Business</a>
+            <a href="index.html#treasury">Treasury</a>
+            <a href="index.html#developers">Developers</a>
+            <a href="index.html#join">Join us</a>
+        </nav>
+        <div class="header-action">
+            <a href="index.html#get-started" class="btn btn-dark" style="text-decoration: none; display: inline-flex; align-items: center;">Launch BETA</a>
+        </div>
+    </header>
+
+    <main class="terms-page-wrapper">
+        <div class="terms-hero">
+            <div class="terms-breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Terms of Service</span>
+            </div>
+            <h1 class="terms-title">Terms of Service</h1>
+            <div class="terms-meta">
+                <span class="terms-badge">Version 2.4</span>
+                <span>Effective Date: August 1, 2025</span>
+                <span>•</span>
+                <span>Last Updated: August 29, 2025</span>
+            </div>
+        </div>
+
+        <div class="terms-layout">
+            <!-- Table of Contents Sidebar -->
+            <aside class="terms-sidebar">
+                <div class="terms-sidebar-title">Table of Contents</div>
+                <ul class="terms-toc-list" id="termsToc">
+                    <li><a href="#acceptance" class="terms-toc-link active">1. Acceptance of Terms</a></li>
+                    <li><a href="#services" class="terms-toc-link">2. Description of Services</a></li>
+                    <li><a href="#eligibility" class="terms-toc-link">3. Eligibility & Underwriting</a></li>
+                    <li><a href="#prohibited" class="terms-toc-link">4. Acceptable Use & Compliance</a></li>
+                    <li><a href="#processors" class="terms-toc-link">5. Third-Party Acquirers & Routing</a></li>
+                    <li><a href="#fees" class="terms-toc-link">6. Fees & Payment Terms</a></li>
+                    <li><a href="#chargebacks" class="terms-toc-link">7. Risk & Chargebacks</a></li>
+                    <li><a href="#security" class="terms-toc-link">8. Security & Data Protection</a></li>
+                    <li><a href="#ip" class="terms-toc-link">9. Intellectual Property</a></li>
+                    <li><a href="#liability" class="terms-toc-link">10. Limitation of Liability</a></li>
+                    <li><a href="#termination" class="terms-toc-link">11. Termination & Suspension</a></li>
+                    <li><a href="#governing-law" class="terms-toc-link">12. Governing Law & Arbitration</a></li>
+                    <li><a href="#contact" class="terms-toc-link">13. Contact Information</a></li>
+                </ul>
+            </aside>
+
+            <!-- Legal Content Sections -->
+            <div class="terms-content">
+                <!-- Section 1 -->
+                <section id="acceptance" class="terms-section">
+                    <h2><span class="sec-num">01.</span> Acceptance of Terms</h2>
+                    <p>These Terms of Service ("<strong>Terms</strong>", "<strong>Agreement</strong>") constitute a legally binding agreement between you ("<strong>Merchant</strong>", "<strong>you</strong>", or "<strong>your</strong>") and BloomFi, Inc. ("<strong>BloomFi</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>"), governing your access to and use of BloomFi's website, APIs, merchant portal, payment orchestration platform, routing engine, and related software solutions (collectively, the "<strong>Services</strong>").</p>
+                    <p>By registering for an account, accessing our APIs, or utilizing any portion of our Services, you agree that you have read, understood, and agree to be bound by these Terms and our <a href="privacy.html" style="color: #53389e; font-weight: 500;">Privacy Policy</a>. If you are entering into this Agreement on behalf of a company, corporation, or other legal entity, you represent and warrant that you have the authority to bind such entity to these Terms.</p>
+                    <div class="terms-callout">
+                        <strong>Important Notice:</strong> BloomFi provides high-risk payment orchestration and gateway routing infrastructure. Processing services are fulfilled by licensed acquiring banks, payment facilitators, and third-party processors. Please review Section 5 and Section 7 regarding underwriting, rolling reserves, and processor terms.
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section id="services" class="terms-section">
+                    <h2><span class="sec-num">02.</span> Description of Services</h2>
+                    <p>BloomFi provides a specialized payment orchestration and gateway routing platform designed to maintain payment continuity, optimize acceptance rates, and protect revenue for high-risk, high-volume, and subscription businesses.</p>
+                    <p>Our platform includes the following capabilities:</p>
+                    <ul>
+                        <li><strong>Multi-Processor Routing:</strong> Smart dynamic routing of credit card, debit, ACH, crypto, and alternative payment transactions across multiple acquiring partners.</li>
+                        <li><strong>Processor Redundancy & Failover:</strong> Automated failover mechanisms to redirect transactions in real time in the event of provider downtime or sudden account restrictions.</li>
+                        <li><strong>Risk & Chargeback Monitoring:</strong> Continuous transaction monitoring, predictive chargeback alerts, fraud prevention tools, and velocity checks.</li>
+                        <li><strong>Unified Merchant Dashboard & API:</strong> A single integration point to manage transactions, settlements, refunds, and processor relationships.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 3 -->
+                <section id="eligibility" class="terms-section">
+                    <h2><span class="sec-num">03.</span> Eligibility & Underwriting</h2>
+                    <p>To use BloomFi, you must operate a valid, legally registered business entity in good standing in your jurisdiction of incorporation. You must provide true, accurate, current, and complete information during our onboarding and underwriting processes.</p>
+                    <h3>Underwriting Requirements</h3>
+                    <p>Due to the regulated nature of payment processing, you agree to provide all requested Know Your Business (KYB), Know Your Customer (KYC), and anti-money laundering (AML) documentation, including but not limited to:</p>
+                    <ul>
+                        <li>Government-issued identification of beneficial owners and officers (holding 25% or greater equity).</li>
+                        <li>Certificate of Incorporation, Articles of Organization, and business operating licenses.</li>
+                        <li>Recent processing statements (typically 3–6 months) and audited corporate financial statements.</li>
+                        <li>Proof of domain ownership, clear refund/cancellation policies, and terms displayed on your checkout pages.</li>
+                    </ul>
+                    <p>BloomFi and its acquiring partners reserve the right to re-underwrite or adjust processing caps based on ongoing volume, chargeback ratios, or changing risk dynamics.</p>
+                </section>
+
+                <!-- Section 4 -->
+                <section id="prohibited" class="terms-section">
+                    <h2><span class="sec-num">04.</span> Acceptable Use & Compliance</h2>
+                    <p>You agree to comply with all applicable local, national, and international laws, card brand rules (Visa, Mastercard, American Express, Discover), and regulatory standards relating to your commercial activities.</p>
+                    <h3>Supported & Restricted Verticals</h3>
+                    <p>BloomFi specializes in high-risk commercial verticals including nutraceuticals, compliant peptides, dietary supplements, digital goods, and specialized subscription services. However, you expressly agree not to use the Services for any of the following strictly prohibited activities:</p>
+                    <ul>
+                        <li>Unlicensed pharmaceutical sales, counterfeit goods, or illegal narcotics.</li>
+                        <li>Deceptive marketing practices, unauthorized recurring rebilling, or hidden negative-option billing.</li>
+                        <li>Money laundering, terrorist financing, or sanctions violations under OFAC.</li>
+                        <li>Human trafficking, child exploitation, or non-consensual content.</li>
+                        <li>Pyramid schemes, multi-level marketing without retail product sales, or get-rich-quick scams.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 5 -->
+                <section id="processors" class="terms-section">
+                    <h2><span class="sec-num">05.</span> Third-Party Acquirers & Routing</h2>
+                    <p>BloomFi acts as a technical infrastructure provider and software orchestrator. Actual fund settlement, merchant accounts (MIDs), and card processing agreements are established directly with, or sponsored by, registered Payment Service Providers (PSPs), Independent Sales Organizations (ISOs), and Member Acquiring Banks.</p>
+                    <p>You acknowledge that:</p>
+                    <ul>
+                        <li>You may be subject to separate terms and conditions provided by each connected payment processor or acquirer.</li>
+                        <li>Acquiring banks maintain independent authority to approve, decline, adjust volume limits, or hold funds according to card brand rules.</li>
+                        <li>BloomFi’s smart routing algorithms distribute transaction traffic based on configured rules, processor health, and risk profiles, but BloomFi does not guarantee that every individual transaction will be approved by the underlying acquirer.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 6 -->
+                <section id="fees" class="terms-section">
+                    <h2><span class="sec-num">06.</span> Fees & Payment Terms</h2>
+                    <p>You agree to pay all applicable platform fees, subscription rates, transaction fees, and gateway charges as outlined in your Merchant Agreement or active pricing tier (Basic, Plus, Business, or Custom Enterprise).</p>
+                    <ul>
+                        <li><strong>Platform Subscription Fees:</strong> Billed in advance on a monthly or annual recurring cycle as selected in your merchant settings.</li>
+                        <li><strong>Transaction & Routing Fees:</strong> Assessed per transaction attempt or authorized settlement, calculated and settled on an agreed frequency (daily, weekly, or monthly net deduction).</li>
+                        <li><strong>Currency & Taxes:</strong> All fees are quoted and payable in United States Dollars (USD) unless otherwise explicitly specified. You are responsible for all applicable taxes arising from your transactions.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 7 -->
+                <section id="chargebacks" class="terms-section">
+                    <h2><span class="sec-num">07.</span> Risk & Chargeback Management</h2>
+                    <p>High-risk processing requires strict adherence to card network chargeback monitoring thresholds. Merchants are required to maintain a dispute-to-transaction ratio within acceptable limits (typically under 0.90% for Visa/Mastercard monitoring programs).</p>
+                    <h3>Rolling Reserves & Withholdings</h3>
+                    <p>Acquiring partners may establish a rolling reserve (e.g., 5% to 10% of gross volume held for 180 days) to mitigate potential chargeback liabilities and refund risks. BloomFi provides real-time reporting on all active reserve balances and settlement timelines.</p>
+                    <div class="terms-callout">
+                        <strong>Chargeback Liability:</strong> The Merchant remains solely and fully liable for all chargebacks, reversals, refunds, retrieval requests, fines, and associated network penalties incurred across all connected merchant accounts.
+                    </div>
+                </section>
+
+                <!-- Section 8 -->
+                <section id="security" class="terms-section">
+                    <h2><span class="sec-num">08.</span> Security & Data Protection</h2>
+                    <p>BloomFi adheres to industry-leading data security standards, including Payment Card Industry Data Security Standards (PCI DSS Level 1). All cardholder data entering the BloomFi orchestration layer is tokenized and encrypted in transit using TLS 1.3 and at rest with AES-256 encryption.</p>
+                    <p>You agree to:</p>
+                    <ul>
+                        <li>Maintain the confidentiality of your API keys, webhook signing secrets, and merchant portal login credentials.</li>
+                        <li>Immediately notify BloomFi at <a href="mailto:security@bloomfi.io" style="color: #53389e; font-weight: 500;">security@bloomfi.io</a> upon discovery of any suspected compromise, unauthorized access, or security incident.</li>
+                        <li>Comply with applicable privacy laws (such as GDPR, CCPA, and CPRA) regarding the collection and transmission of customer personal information.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 9 -->
+                <section id="ip" class="terms-section">
+                    <h2><span class="sec-num">09.</span> Intellectual Property</h2>
+                    <p>All software, proprietary algorithms, API specifications, user interfaces, documentation, trademarks, and logos associated with BloomFi are the sole property of BloomFi, Inc. and its licensors. BloomFi grants you a limited, non-exclusive, non-transferable, revocable license to access and use the platform in accordance with this Agreement during the term of your active subscription.</p>
+                </section>
+
+                <!-- Section 10 -->
+                <section id="liability" class="terms-section">
+                    <h2><span class="sec-num">10.</span> Limitation of Liability</h2>
+                    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL BLOOMFI, ITS AFFILIATES, DIRECTORS, OFFICERS, EMPLOYEES, OR PARTNERS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OR BUSINESS INTERRUPTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR INABILITY TO USE THE SERVICES.</p>
+                    <p>BLOOMFI’S TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS UNDER THIS AGREEMENT SHALL BE LIMITED TO THE TOTAL AMOUNT OF FEES PAID BY YOU TO BLOOMFI IN THE THREE (3) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM.</p>
+                </section>
+
+                <!-- Section 11 -->
+                <section id="termination" class="terms-section">
+                    <h2><span class="sec-num">11.</span> Termination & Suspension</h2>
+                    <p>Either party may terminate this Agreement with thirty (30) days' written notice. BloomFi may immediately suspend or terminate your access to the platform without prior notice if:</p>
+                    <ul>
+                        <li>You breach any material provision of these Terms or acceptable use policies.</li>
+                        <li>An acquiring bank or card network mandates termination of your merchant account or processing privileges.</li>
+                        <li>Your account experiences anomalous fraud spikes, excessive chargeback ratios, or poses an immediate security hazard.</li>
+                        <li>You fail to satisfy underwriting or ongoing compliance verification requests.</li>
+                    </ul>
+                </section>
+
+                <!-- Section 12 -->
+                <section id="governing-law" class="terms-section">
+                    <h2><span class="sec-num">12.</span> Governing Law & Arbitration</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law principles. Any dispute, claim, or controversy arising out of or relating to this Agreement shall be resolved through binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Arbitration Rules.</p>
+                </section>
+
+                <!-- Section 13 -->
+                <section id="contact" class="terms-section">
+                    <h2><span class="sec-num">13.</span> Contact Information</h2>
+                    <p>If you have questions, inquiries, or legal notices concerning these Terms of Service, please contact our legal and compliance team:</p>
+                    <ul>
+                        <li><strong>Email:</strong> <a href="mailto:legal@bloomfi.io" style="color: #53389e; font-weight: 500;">legal@bloomfi.io</a></li>
+                        <li><strong>Support:</strong> <a href="mailto:support@bloomfi.io" style="color: #53389e; font-weight: 500;">support@bloomfi.io</a></li>
+                        <li><strong>Mailing Address:</strong> BloomFi, Inc., 100 Montgomery St, Suite 1800, San Francisco, CA 94104</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cta-footer-section" style="margin-top: 40px;">
+        <div class="cta-footer-bottom">
+            <p class="cta-copyright">© 2025 BloomFi. All Rights Reserved.</p>
+            <nav class="cta-social-links" aria-label="Footer links">
+                <a href="terms.html" class="cta-social-link" style="color: #1e1f33; font-weight: 600;">Terms of Service</a>
+                <a href="privacy.html" class="cta-social-link">Privacy Policy</a>
+                <a href="contact.html" class="cta-social-link">Contact</a>
+                <a href="about.html" class="cta-social-link">About</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Interactive Table of Contents Scrollspy Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tocLinks = document.querySelectorAll('.terms-toc-link');
+            const sections = document.querySelectorAll('.terms-section');
+
+            if ('IntersectionObserver' in window && sections.length > 0) {
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '-20% 0px -70% 0px',
+                    threshold: 0
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute('id');
+                            tocLinks.forEach(link => {
+                                if (link.getAttribute('href') === `#${id}`) {
+                                    link.classList.add('active');
+                                } else {
+                                    link.classList.remove('active');
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach(section => observer.observe(section));
+            }
+
+            // Smooth scrolling on click
+            tocLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetEl = document.getElementById(targetId);
+                    if (targetEl) {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, null, `#${targetId}`);
+                        tocLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=24">
+    <link rel="stylesheet" href="styles.css?v=26">
     <style>
         /* How It Works Section Direct Styles */
         .how-it-works-section {
@@ -854,18 +854,29 @@
 
             <!-- Footer -->
             <footer class="cta-footer-bottom">
-                <p class="cta-copyright">© 2025 Company Name. All Rights Reserved.</p>
-                <nav class="cta-social-links" aria-label="Social media links">
-                    <a href="#linkedin" class="cta-social-link">LinkedIn</a>
-                    <a href="#instagram" class="cta-social-link">Instagram</a>
-                    <a href="#facebook" class="cta-social-link">Facebook</a>
-                    <a href="#twitter" class="cta-social-link">Twitter</a>
+                <p class="cta-copyright">© 2025 BloomFi. All Rights Reserved.</p>
+                <nav class="cta-social-links" aria-label="Footer links">
+                    <a href="terms.html" class="cta-social-link">Terms of Service</a>
+                    <a href="privacy.html" class="cta-social-link">Privacy Policy</a>
+                    <a href="contact.html" class="cta-social-link">Contact</a>
+                    <a href="about.html" class="cta-social-link">About</a>
                 </nav>
             </footer>
         </section>
 
         <script>
             document.addEventListener('DOMContentLoaded', () => {
+                // If user navigates with #terms, #privacy, #contact, or #about hash, redirect to respective pages
+                if (window.location.hash === '#terms') {
+                    window.location.href = 'terms.html';
+                } else if (window.location.hash === '#privacy') {
+                    window.location.href = 'privacy.html';
+                } else if (window.location.hash === '#contact') {
+                    window.location.href = 'contact.html';
+                } else if (window.location.hash === '#about') {
+                    window.location.href = 'about.html';
+                }
+
                 const container = document.getElementById('hwCardsContainer');
                 const prevBtn = document.getElementById('hwPrevBtn');
                 const nextBtn = document.getElementById('hwNextBtn');
