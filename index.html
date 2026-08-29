@@ -232,11 +232,10 @@
             BloomFi
         </div>
         <nav class="nav">
-            <a href="#">USDBloom</a>
-            <a href="#">Business</a>
-            <a href="#">Treasury</a>
-            <a href="#">Developers</a>
-            <a href="#">Join us</a>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#industries">Industries</a>
+            <a href="#pricing">Pricing</a>
         </nav>
         <div class="header-action">
             <button class="btn btn-dark">Launch BETA</button>
@@ -252,7 +251,7 @@
             </div>
         </section>
 
-        <section class="explore-section">
+        <section class="explore-section" id="features">
             <h2>Get paid. We’ll handle the rest.</h2>
             <div class="explore-grid">
                 <!-- Card 1 -->
@@ -332,7 +331,7 @@
         </section>
 
         <!-- How It Works Section -->
-        <section class="how-it-works-section">
+        <section class="how-it-works-section" id="how-it-works">
             <div class="how-it-works-header">
                 <div class="how-it-works-title">
                     <h2 class="hw-main-heading">
@@ -506,7 +505,7 @@
         </section>
 
         <!-- FAQ Section -->
-        <section class="faq-section">
+        <section class="faq-section" id="industries">
             <div class="faq-container">
                 <div class="faq-left">
                     <h2 class="faq-title">Industries</h2>
@@ -591,7 +590,7 @@
         </section>
 
         <!-- Pricing Section -->
-        <section class="pricing-section">
+        <section class="pricing-section" id="pricing">
             <div class="pricing-container">
                 <div class="pricing-header-col">
                     <h2 class="pricing-main-title">Choose your<br>plan</h2>
@@ -875,6 +874,52 @@
                     window.location.href = 'contact.html';
                 } else if (window.location.hash === '#about') {
                     window.location.href = 'about.html';
+                }
+
+                // Smooth scrolling animation for navigation links
+                const navLinks = document.querySelectorAll('.nav a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        const href = link.getAttribute('href');
+                        if (!href) return;
+                        const hash = href.includes('#') ? href.substring(href.indexOf('#')) : '';
+                        if (hash && hash.length > 1) {
+                            const target = document.querySelector(hash);
+                            if (target) {
+                                e.preventDefault();
+                                const offset = 36;
+                                const elementPosition = target.getBoundingClientRect().top;
+                                const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                                window.scrollTo({
+                                    top: Math.max(0, offsetPosition),
+                                    behavior: 'smooth'
+                                });
+
+                                if (history.pushState) {
+                                    history.pushState(null, null, hash);
+                                } else {
+                                    window.location.hash = hash;
+                                }
+                            }
+                        }
+                    });
+                });
+
+                // Smooth scroll if page is loaded with a section hash
+                if (window.location.hash && ['#features', '#how-it-works', '#industries', '#pricing'].includes(window.location.hash)) {
+                    setTimeout(() => {
+                        const target = document.querySelector(window.location.hash);
+                        if (target) {
+                            const offset = 36;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - offset;
+                            window.scrollTo({
+                                top: Math.max(0, offsetPosition),
+                                behavior: 'smooth'
+                            });
+                        }
+                    }, 150);
                 }
 
                 const container = document.getElementById('hwCardsContainer');
