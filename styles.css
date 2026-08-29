@@ -317,10 +317,12 @@ a.btn-large {
     .hero-card {
         height: calc(100vh - 90px);
         height: calc(100dvh - 90px);
-        min-height: 560px;
-        padding: 40px 24px;
+        max-height: 660px;
+        min-height: 520px;
+        padding: 36px 24px;
         border-radius: 28px;
         justify-content: center;
+        background-position: center 36%;
     }
     
     .hero-content {
@@ -358,12 +360,14 @@ a.btn-large {
     }
     
     .hero-card {
-        height: calc(100vh - 78px);
-        height: calc(100dvh - 78px);
-        min-height: 500px;
-        padding: 32px 20px;
+        height: calc(100vh - 84px);
+        height: calc(100dvh - 84px);
+        max-height: 600px;
+        min-height: 480px;
+        padding: 30px 20px;
         border-radius: 24px;
         justify-content: center;
+        background-position: center 34%;
     }
     
     .hero-content {
@@ -411,12 +415,14 @@ a.btn-large {
     }
     
     .hero-card {
-        height: calc(100vh - 66px);
-        height: calc(100dvh - 66px);
-        min-height: 460px;
+        height: calc(100vh - 78px);
+        height: calc(100dvh - 78px);
+        max-height: 560px;
+        min-height: 440px;
         padding: 24px 14px;
         border-radius: 22px;
         justify-content: center;
+        background-position: center 30%;
     }
     
     .hero-content {
@@ -468,10 +474,12 @@ a.btn-large {
     }
     
     .hero-card {
-        height: calc(100vh - 58px);
-        height: calc(100dvh - 58px);
-        min-height: 420px;
+        height: calc(100vh - 68px);
+        height: calc(100dvh - 68px);
+        max-height: 500px;
+        min-height: 400px;
         padding: 18px 10px;
+        background-position: center 28%;
     }
     
     .logo {
