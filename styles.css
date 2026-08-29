@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 48px;
+    padding: 56px 48px 28px 48px;
     background-color: #ffffff;
 }
 
@@ -274,7 +274,7 @@ body {
 
 @media (max-width: 576px) {
     .header {
-        padding: 16px 20px;
+        padding: 42px 20px 20px 20px;
     }
     
     .hero-content h1,
@@ -879,26 +879,68 @@ body {
 }
 
 .solutions-content {
-    max-width: 860px;
+    max-width: 920px;
 }
 
 .solutions-text {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 2.15rem;
+    font-family: 'Instrument Serif', serif;
+    font-size: 2.5rem;
     font-weight: 400;
-    line-height: 1.36;
+    line-height: 1.25;
     letter-spacing: -0.02em;
+    color: #2b2c45;
     margin: 0;
 }
 
 .solutions-bold {
-    color: #0b1a2d;
-    font-weight: 600;
+    color: #2b2c45;
+    font-weight: 400;
 }
 
 .solutions-muted {
-    color: #62758d;
+    color: #5e617d;
     font-weight: 400;
+}
+
+/* Letter-by-letter reveal animation */
+.sol-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.sol-space {
+    display: inline;
+}
+
+.sol-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(6px);
+    will-change: opacity, transform;
+}
+
+.solutions-text.is-animated .sol-char {
+    animation: letterReveal 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--char-idx) * 20ms);
+}
+
+@keyframes letterReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sol-char {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
 }
 
 @media (max-width: 992px) {
@@ -906,8 +948,8 @@ body {
         margin: 50px auto 90px auto;
     }
     .solutions-text {
-        font-size: 1.75rem;
-        line-height: 1.38;
+        font-size: 2rem;
+        line-height: 1.28;
     }
 }
 
@@ -917,8 +959,233 @@ body {
         padding: 0 20px;
     }
     .solutions-text {
-        font-size: 1.35rem;
-        line-height: 1.42;
+        font-size: 1.6rem;
+        line-height: 1.32;
     }
 }
+
+/* FAQ Section */
+.faq-section {
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto 120px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.faq-section::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+/* FAQ Scroll Reveal Animation (Fade-in bottom to top) */
+.faq-left,
+.faq-item {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.faq-section.is-visible .faq-left {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.05s;
+}
+
+.faq-section.is-visible .faq-item:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.12s;
+}
+
+.faq-section.is-visible .faq-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.22s;
+}
+
+.faq-section.is-visible .faq-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.32s;
+}
+
+.faq-section.is-visible .faq-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.42s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-left,
+    .faq-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+.faq-left {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #1e1e2d;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px 0;
+    line-height: 1.2;
+}
+
+.faq-divider {
+    width: 100%;
+    max-width: 260px;
+    height: 2px;
+    background-color: #e5e5e8;
+    border-radius: 1px;
+}
+
+.faq-right {
+    flex: 1;
+    max-width: 680px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background-color: #f3f3f4;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+    background-color: #eaebee;
+}
+
+.faq-item.is-open {
+    background-color: #ebebee;
+}
+
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1e1e2d;
+}
+
+.faq-icon {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #1e1e2d;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.faq-item.is-open .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-question-text {
+    flex: 1;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    opacity: 0;
+}
+
+.faq-item.is-open .faq-answer {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-answer-inner {
+    padding: 0 20px 18px 52px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: #5e617d;
+}
+
+@media (max-width: 992px) {
+    .faq-container {
+        gap: 40px;
+    }
+    .faq-left {
+        flex: 0 0 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-section {
+        margin: 30px auto 80px auto;
+        padding: 0 20px;
+    }
+    .faq-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .faq-left {
+        flex: none;
+        width: 100%;
+    }
+    .faq-title {
+        font-size: 1.85rem;
+        margin-bottom: 12px;
+    }
+    .faq-divider {
+        max-width: 100%;
+    }
+    .faq-right {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
 

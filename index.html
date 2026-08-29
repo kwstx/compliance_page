@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=7">
+    <link rel="stylesheet" href="styles.css?v=13">
     <style>
         /* How It Works Section Direct Styles */
         .how-it-works-section {
@@ -499,9 +499,70 @@
         <!-- Flexible Solutions Section -->
         <section class="solutions-section">
             <div class="solutions-content">
-                <h2 class="solutions-text">
+                <h2 class="solutions-text" id="solutionsHeading">
                     <span class="solutions-bold">Payment solutions built for high-risk businesses.</span> <span class="solutions-muted">Access reliable processing, smart routing, and risk tools — designed to keep your payments flowing as you grow.</span>
                 </h2>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="faq-container">
+                <div class="faq-left">
+                    <h2 class="faq-title">FAQ Section</h2>
+                    <div class="faq-divider"></div>
+                </div>
+                <div class="faq-right">
+                    <div class="faq-list">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false" type="button">
+                                <span class="faq-icon">+</span>
+                                <span class="faq-question-text">Question 1</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>We provide specialized payment infrastructure, high-risk merchant accounts, intelligent multi-processor routing, and risk mitigation tools tailored for high-risk businesses.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false" type="button">
+                                <span class="faq-icon">+</span>
+                                <span class="faq-question-text">Question 2</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>Our smart routing automatically directs transactions to the acquiring processor with the highest approval rate and optimal risk tolerance for that customer profile.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false" type="button">
+                                <span class="faq-icon">+</span>
+                                <span class="faq-question-text">Question 3</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>With our single integration, you connect once and gain access to multiple global acquiring partners and alternative payment methods without rebuilding your checkout.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false" type="button">
+                                <span class="faq-icon">+</span>
+                                <span class="faq-question-text">Question 4</span>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-inner">
+                                    <p>We proactively monitor chargeback ratios, identify suspicious patterns, and provide automated dispute management tools to protect your business from payment disruptions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -603,6 +664,124 @@
                         animatedHeadings.forEach(el => el.classList.add('is-visible'));
                     }
                 }
+
+                // Letter-by-letter reveal animation for Solutions Section
+                function initLetterAnimation(element) {
+                    if (!element) return;
+                    let globalCharIndex = 0;
+
+                    function processNode(node) {
+                        if (node.nodeType === Node.TEXT_NODE) {
+                            const text = node.textContent;
+                            if (!text) return document.createTextNode('');
+                            const fragment = document.createDocumentFragment();
+                            const parts = text.split(/(\s+)/);
+                            parts.forEach(part => {
+                                if (!part) return;
+                                if (/^\s+$/.test(part)) {
+                                    const spaceSpan = document.createElement('span');
+                                    spaceSpan.className = 'sol-space';
+                                    spaceSpan.textContent = part;
+                                    fragment.appendChild(spaceSpan);
+                                } else {
+                                    const wordSpan = document.createElement('span');
+                                    wordSpan.className = 'sol-word';
+                                    for (const char of part) {
+                                        const charSpan = document.createElement('span');
+                                        charSpan.className = 'sol-char';
+                                        charSpan.style.setProperty('--char-idx', globalCharIndex++);
+                                        charSpan.textContent = char;
+                                        wordSpan.appendChild(charSpan);
+                                    }
+                                    fragment.appendChild(wordSpan);
+                                }
+                            });
+                            return fragment;
+                        } else if (node.nodeType === Node.ELEMENT_NODE) {
+                            const clone = node.cloneNode(false);
+                            Array.from(node.childNodes).forEach(child => {
+                                clone.appendChild(processNode(child));
+                            });
+                            return clone;
+                        }
+                        return node.cloneNode(true);
+                    }
+
+                    const fragment = document.createDocumentFragment();
+                    Array.from(element.childNodes).forEach(child => {
+                        fragment.appendChild(processNode(child));
+                    });
+                    element.innerHTML = '';
+                    element.appendChild(fragment);
+
+                    if ('IntersectionObserver' in window) {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    element.classList.add('is-animated');
+                                    observer.unobserve(element);
+                                }
+                            });
+                        }, {
+                            threshold: 0.15,
+                            rootMargin: '0px 0px -40px 0px'
+                        });
+                        observer.observe(element);
+                    } else {
+                        element.classList.add('is-animated');
+                    }
+                }
+
+                initLetterAnimation(document.getElementById('solutionsHeading'));
+
+                // FAQ Section Scroll Reveal Trigger
+                const faqSection = document.querySelector('.faq-section');
+                if (faqSection) {
+                    if ('IntersectionObserver' in window) {
+                        const faqObserver = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    faqSection.classList.add('is-visible');
+                                    faqObserver.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.15,
+                            rootMargin: '0px 0px -40px 0px'
+                        });
+                        faqObserver.observe(faqSection);
+                    } else {
+                        faqSection.classList.add('is-visible');
+                    }
+                }
+
+                // FAQ Accordion functionality
+                const faqItems = document.querySelectorAll('.faq-item');
+                faqItems.forEach(item => {
+                    const questionBtn = item.querySelector('.faq-question');
+                    if (questionBtn) {
+                        questionBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const isOpen = item.classList.contains('is-open');
+                            
+                            faqItems.forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('is-open');
+                                    const otherBtn = otherItem.querySelector('.faq-question');
+                                    if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+                                }
+                            });
+
+                            if (isOpen) {
+                                item.classList.remove('is-open');
+                                questionBtn.setAttribute('aria-expanded', 'false');
+                            } else {
+                                item.classList.add('is-open');
+                                questionBtn.setAttribute('aria-expanded', 'true');
+                            }
+                        });
+                    }
+                });
             });
         </script>
 
