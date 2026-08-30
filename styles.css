@@ -3209,6 +3209,36 @@ a.btn-large {
     display: block;
 }
 
+.form-error-banner {
+    display: none;
+    background-color: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 16px;
+    padding: 20px 24px;
+    text-align: center;
+    color: #991b1b;
+    margin-bottom: 24px;
+    animation: fadeIn 0.4s ease;
+}
+
+.form-error-banner.show {
+    display: block;
+}
+
+.error-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #7f1d1d;
+}
+
+.error-desc {
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: #991b1b;
+    margin: 0;
+}
+
 .success-icon {
     width: 44px;
     height: 44px;

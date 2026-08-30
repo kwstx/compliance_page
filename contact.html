@@ -68,7 +68,17 @@
                     <p class="success-desc">Thank you for reaching out to Engram. One of our payment specialists will review your submission and contact you within 2 business hours.</p>
                 </div>
 
-                <form id="contactForm" class="contact-form" onsubmit="return handleFormSubmit(event)">
+                <div id="formErrorBanner" class="form-error-banner">
+                    <div class="error-title">Submission Error</div>
+                    <p class="error-desc">There was an issue sending your message. Please try again or reach out directly to <a href="mailto:hello@useengram.com" style="color: #991b1b; text-decoration: underline; font-weight: 600;">hello@useengram.com</a>.</p>
+                </div>
+
+                <form id="contactForm" class="contact-form" action="https://formsubmit.co/hello@useengram.com" method="POST" onsubmit="return handleFormSubmit(event)">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" id="emailSubject" value="New Contact Inquiry - Engram">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_replyto" id="replyToEmail" value="">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName" class="form-label">First Name <span class="req">*</span></label>
@@ -416,10 +426,9 @@
                 }
 
                 function selectOption(opt) {
-                    const val = opt.getAttribute('data-value');
-                    const text = opt.querySelector('span').textContent;
+                    const text = opt.querySelector('span').textContent.trim();
 
-                    hiddenInput.value = val;
+                    hiddenInput.value = text;
                     valueSpan.textContent = text;
                     valueSpan.classList.remove('is-placeholder');
 
@@ -484,22 +493,43 @@
             });
         }
 
-        function handleFormSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
             const form = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const banner = document.getElementById('formSuccessBanner');
+            const errorBanner = document.getElementById('formErrorBanner');
+
+            if (errorBanner) errorBanner.classList.remove('show');
 
             // Validate required topic selection
             const inquiryInput = document.getElementById('inquiryType');
-            if (!inquiryInput.value) {
+            if (!inquiryInput || !inquiryInput.value) {
                 const inqContainer = document.getElementById('container-inquiryType');
-                const inqTrigger = inqContainer.querySelector('.custom-select-trigger');
-                inqTrigger.style.borderColor = '#ef4444';
-                inqTrigger.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                inqTrigger.focus();
+                const inqTrigger = inqContainer ? inqContainer.querySelector('.custom-select-trigger') : null;
+                if (inqTrigger) {
+                    inqTrigger.style.borderColor = '#ef4444';
+                    inqTrigger.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    inqTrigger.focus();
+                }
                 return false;
             }
+
+            // Sync reply-to email and dynamic subject
+            const workEmailVal = document.getElementById('workEmail')?.value || '';
+            const firstNameVal = document.getElementById('firstName')?.value || '';
+            const lastNameVal = document.getElementById('lastName')?.value || '';
+            const companyNameVal = document.getElementById('companyName')?.value || '';
+
+            const replyToInput = document.getElementById('replyToEmail');
+            if (replyToInput) replyToInput.value = workEmailVal;
+
+            const subjectInput = document.getElementById('emailSubject');
+            if (subjectInput && (firstNameVal || companyNameVal)) {
+                subjectInput.value = `New Inquiry: ${firstNameVal} ${lastNameVal} ${companyNameVal ? '(' + companyNameVal + ')' : ''}`.trim();
+            }
+
+            const originalBtnContent = submitBtn.innerHTML;
 
             // Button loading feedback
             submitBtn.disabled = true;
@@ -517,11 +547,35 @@
                 <span>Sending...</span>
             `;
 
-            setTimeout(() => {
-                form.style.display = 'none';
-                banner.classList.add('show');
-                banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 800);
+            try {
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                const response = await fetch('https://formsubmit.co/ajax/hello@useengram.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    banner.classList.add('show');
+                    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (err) {
+                console.error('Submission error:', err);
+                if (errorBanner) {
+                    errorBanner.classList.add('show');
+                    errorBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+            }
 
             return false;
         }
